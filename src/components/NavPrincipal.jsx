@@ -13,7 +13,7 @@ export const NavPrincipal = (props) => {
     
             <section className='containerSegundario'>
                 
-                <NavMenu/>
+                <NavMenu cerrarSesion={props.cerrarSesion}/>
 
                 <section className='containerHijo'>
                     {props.children}

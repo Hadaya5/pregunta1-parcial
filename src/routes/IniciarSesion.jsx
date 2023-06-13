@@ -1,14 +1,34 @@
 import React from 'react'
 import "../styles/IniciarSesion.scss"
 import { useTranslation } from 'react-i18next';  
+import { useNavigate } from 'react-router-dom';
+
+
 
 export const IniciarSesion = () => {
 
     const { t, i18n } = useTranslation();
 
+    const navigate = useNavigate();
+
     const handleSubmit = (e) => {
-        e.preventDefault()
+       // e.preventDefault()
+        const username = e.target.elements.username.value;
+        const password = e.target.elements.password.value;
+
+        if (username && password) {
+            // Ambos campos tienen contenido, enviar formulario
+            console.log("Enviando formulario");
+            // Actualizar un valor en localStorage
+            const token = "12334545";
+            localStorage.setItem('token', token);
+            navigate('/inicio');
+            return;
+        }
     }
+
+
+
 
   return (
     <div id='iniciar-sesion' className='container'>
@@ -20,10 +40,10 @@ export const IniciarSesion = () => {
 
                 <div>
                     <div className='field'>
-                        <input type="text" required placeholder={t('login.placeholder1')}/>
+                        <input type="text" name="username" required placeholder={t('login.placeholder1')}/>
                     </div>
                     <div className='field'>
-                        <input type="password" required placeholder={t('login.placeholder1')} />
+                        <input type="password" name="password" required placeholder={t('login.placeholder1')} />
                     </div>
                 </div>
 

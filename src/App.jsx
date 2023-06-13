@@ -1,24 +1,42 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
 import { IniciarSesion } from "./routes/IniciarSesion";
 import {NavPrincipal} from './components/NavPrincipal';
 import "./App.css";
+import { useEffect, useState } from "react";
 
 function App() {
-    const user = false;
+   
+    const [autorizacion, setAutorizacion]= useState(null);
+    useEffect(() => {
+        const token = localStorage.getItem('token');
+        setAutorizacion(token);
+      }, []);
+    
+      function cerrarSesion() {
+        localStorage.removeItem('token');
+        setAutorizacion(null); // Actualiza el estado de la autorización.
+      }
+    
     return (
         <>
             <Router>
                 <>
-                    {user ? (
+                {!autorizacion ?(
                         <Routes>
                             <Route
                                 exact
                                 path="/login"
                                 element={<IniciarSesion />}
                             />
+                            <Route
+                                path="*"
+                                element={<Navigate to="/login" />}
+                            />
                         </Routes>
-                    ) : (
-                        <NavPrincipal>
+                    )
+                    :
+                    (
+                        <NavPrincipal cerrarSesion={cerrarSesion}>
                             <Routes>
                                 <Route
                                     exact
@@ -45,8 +63,14 @@ function App() {
                                     path="/datos-contacto"
                                     element={<>/datos-contacto</>}
                                 />
+                                {/* Ruta predeterminada */}
+                                {/* <Route
+                                    path="*"
+                                    element={<Navigate to="/login" />}
+                                /> */}
                             </Routes>
                         </NavPrincipal>
+                        
                     )}
                 </>
             </Router>

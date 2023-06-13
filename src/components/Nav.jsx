@@ -6,7 +6,8 @@ import perfil from '../assets/default-user-icon.jpg'
 import { useNavigate } from 'react-router-dom';
 
 
-export const NavBar = () => {
+export const NavBar = ({
+}) => {
 
     const { t, i18n } = useTranslation();
 
@@ -88,16 +89,31 @@ const ITEM = [
 
 
 
-export const NavMenu = () => {
+export const NavMenu = ({
+    cerrarSesion
+}) => {
     const { t, i18n } = useTranslation();
     const navigate = useNavigate();
     return(
         <section className='containerMenu'>
             {
-                ITEM.map(item => (
+                ITEM.map((item, index) => (
 
-                    <section onClick={() =>navigate(item?.path)}  className="opcionesMenu" key={`nav-${item}`}> 
-                        <p > {t(item?.label)}</p>
+                    <section 
+                        onClick={() =>{
+                            console.log("item.label item.label", item.label);
+                            if(item.label === "nav.Salir"){
+                                cerrarSesion();
+                                return;
+                            }
+
+                            navigate(item?.path)
+                            
+                            }}  
+                            className="opcionesMenu" 
+                            key={`nav-00-${index}`}
+                        > 
+                            <p key={`p-00${index}`}> {t(item?.label)}</p>
                     </section>
                 ))
 
