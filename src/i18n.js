@@ -3,6 +3,10 @@ import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 import login_en from "./locales/en/IniciarSesion.json"
 import login_es from "./locales/es/IniciarSesion.json"
+import opcionesNav_es from './locales/es/nav.json';
+//import opcionesNav_en from './locales/en/nav.json';;
+
+
 
 const en = Object.assign(
     {},
@@ -11,7 +15,8 @@ const en = Object.assign(
 
 const es = Object.assign(
     {},
-    login_es
+    login_es,
+    opcionesNav_es
 );
 
 
