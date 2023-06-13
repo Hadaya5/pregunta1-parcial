@@ -1,0 +1,10 @@
+{
+    "login": {
+        "titulo1": "TuVivienda.com",
+        "titulo2": "Notify payments",
+        "placeholder1": "Enter your client code",
+        "placeholder2": "Select your preferred language",
+        "boton": "Log In",
+        "olvide_codigo": "I forgot my client code"
+    }
+}

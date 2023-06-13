@@ -6,6 +6,7 @@ import './App.css';
 function App() {
   return (
     <>
+        Hola Mundo
         <Router>
           <Routes>
             <Route exact path="/login" element={<IniciarSesion />} />
