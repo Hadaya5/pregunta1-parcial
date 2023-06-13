@@ -1,13 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useTranslation } from 'react-i18next';  
 import "../styles/IniciarSesion.scss"
 
 export const IniciarSesion = () => {
 
     const { t, i18n } = useTranslation();
+    const [language, setLanguage] = useState('')
 
     const handleSubmit = (e) => {
         e.preventDefault()
+        i18n.changeLanguage( language );
     }
 
   return (
@@ -22,11 +24,13 @@ export const IniciarSesion = () => {
                     <div className='field'>
                         <input type="text" required placeholder={t('login.placeholder1')}/>
                     </div>
-                    <div className='field'>
-                        <input type="password" required placeholder={t('login.placeholder1')} />
-                    </div>
-                </div>
 
+                    <select id="language" name="language" className='field' value={language} onChange={ e => setLanguage(e.target.value) }>
+                        <option value="" disabled selected>{t('login.placeholder2')}</option>
+                        <option value="en">Inglés</option>
+                        <option value="es">Español</option>
+                    </select>
+                </div>
 
                 <button type="submit">{t('login.boton')}</button>
                 <br/>
