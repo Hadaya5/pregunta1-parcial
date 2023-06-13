@@ -1,17 +1,24 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
+
 import login_en from "./locales/en/IniciarSesion.json"
+import forgotPassword_en from "./locales/en/ForgotPassword.json"
+
 import login_es from "./locales/es/IniciarSesion.json"
+import forgotPassword_es from "./locales/es/ForgotPassword.json"
+
 
 const en = Object.assign(
     {},
-    login_en
+    login_en,
+    forgotPassword_en
 );
 
 const es = Object.assign(
     {},
-    login_es
+    login_es,
+    forgotPassword_es
 );
 
 
