@@ -1,0 +1,17 @@
+.containerHPrincipal{
+    width: 100%;
+    height: 40%;
+    display: grid;
+    grid-template-rows: 15% 70% 15%;
+    justify-items: center;
+    align-items: center;
+}
+
+.containerHeader{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
