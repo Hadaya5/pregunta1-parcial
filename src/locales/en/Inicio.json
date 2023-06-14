@@ -1,0 +1,26 @@
+{
+    "inicio": {
+    "vivienda": "Housing",
+    "titulo": "Notification and Payment Process",
+    "estimado": "Dear Customer",
+    "descripcion-proceso-pago": "To streamline the payment process for housing or other services offered by the company, you can make payments through the portal.",
+    "invitamos": "We invite you to watch the video that illustrates how to notify your payment via the Web, and how to obtain your payment receipt.",
+    "video": "INSERT VIDEO HERE THAT SHOWS INSTRUCTIONS",
+    "datos-vivienda": "HOUSING INFORMATION",
+    "País": "Country",
+    "Estado": "State",
+    "Ciudad": "City",
+    "Zona": "Zone",
+    "Descripción": "Description",
+    "Fecha-publicación": "Publication Date",
+    "Fecha-vencimiento": "Expiration Date",
+    "País-procedencia": "Country of Origin",
+    "Tipo-publicación": "Publication Type",
+    "Idioma-publicación": "Publication Language",
+    "precio": "Price",
+    "codigo-cliente": "Customer Code:",
+    "notificar-pago": "Notify Payment",
+    "descripcion-vivienda": "Housing Description",
+    "boton-aceptar": "Accept"
+    }
+}

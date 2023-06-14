@@ -4,18 +4,21 @@ import LanguageDetector from 'i18next-browser-languagedetector';
 
 import login_en from "./locales/en/IniciarSesion.json"
 import forgotPassword_en from "./locales/en/ForgotPassword.json"
+import inicio_en from "./locales/en/Inicio.json"
 
 import login_es from "./locales/es/IniciarSesion.json"
 import forgotPassword_es from "./locales/es/ForgotPassword.json"
 import opcionesNav_es from './locales/es/nav.json';
-//import opcionesNav_en from './locales/en/nav.json';;
+//import opcionesNav_en from './locales/en/nav.json';
+import inicio_es from "./locales/es/Inicio.json"
 
 
 
 const en = Object.assign(
     {},
     login_en,
-    forgotPassword_en
+    forgotPassword_en,
+    inicio_en
 );
 
 const es = Object.assign(
@@ -23,6 +26,7 @@ const es = Object.assign(
     login_es,
     forgotPassword_es,
     opcionesNav_es,
+    inicio_es
 );
 
 

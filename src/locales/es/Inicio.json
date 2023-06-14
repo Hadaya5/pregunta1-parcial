@@ -1,0 +1,26 @@
+{
+    "inicio": {
+        "vivienda": "Vivienda",
+        "titulo": "Notificación y proceso de pago",
+        "estimado": "Estimado cliente",
+        "descripcion-proceso-pago": "Para agilizar el proceso de pagos de las viviendas, u otros servicios ofrecidos por la empresa, puede realizarlo en el portal",
+        "invitamos": "Le invitamos a ver el video que le ilustra, como realizar la notificación de su pago, vía Web; y la forma de obtener su comprobante de pago",
+        "video": "COLOQUE AQUÍ EL VIDEO QUE MUESTRA LAS INSTRUCCIONES",
+        "datos-vivienda": "DATOS DE LA VIVIENDA",
+        "País": "País",
+        "Estado": "Estado",
+        "Ciudad": "Ciudad",
+        "Zona": "Zona",
+        "Descripción": "Descripción",
+        "Fecha-publicación": "Fecha-publicación",
+        "Fecha-vencimiento": "Fecha-vencimiento",
+        "País-procedencia": "País-procedencia",
+        "Tipo-publicación": "Tipo-publicación",
+        "Idioma-publicación": "Idioma-publicación",
+        "precio": "Precio",
+        "codigo-cliente": "Código de cliente:",
+        "notificar-pago": "Notificar pago",
+        "descripcion-vivienda": "Descripción de la vivienda",
+        "boton-aceptar": "Aceptar"
+    }
+}
