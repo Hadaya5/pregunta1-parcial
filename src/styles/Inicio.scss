@@ -1,52 +1,54 @@
 @import 'colors';
 @import 'reactjs-popup/dist/index.css';
 
-#popup-2{
+
+#popup-2 {
     padding: 0;
     border: 1px solid black;
 }
 
-    #popup-container {
-        height: 32vh;
+#popup-container {
+    height: auto;
+    padding-bottom: 20px;
 
-        #descripcion-vivienda{
-            background-color: $azul-oscuro;
-            height: 100%;    
-            color: $blanco;
-          }
+    #descripcion-vivienda{
+        background-color: $azul-oscuro;
+        height: 100%;    
+        color: $blanco;
+        }
 
-          .header {
-            background-color: $azul-claro;
-            color: white;
-            font-size: 20px;
-            font-weight: bold;
-            padding: 0.7rem 0;
-          }
-          
-          .modal {
-            padding: 0px 20px;
-          }
+        .header {
+        background-color: $azul-claro;
+        color: white;
+        font-size: 20px;
+        font-weight: bold;
+        padding: 0.7rem 0;
+        }
         
-          div {
-            display: flex;
-            justify-content: center;
+        .modal {
+        padding: 0px 20px;
+        }
+    
+        div {
+        display: flex;
+        justify-content: center;
 
-            #boton-aceptar {
-                background-color: $dorado;
-                border-radius: 5px;
-                border: none;
-                padding: 6px 18px;
-                color: white;
-                font-size: 16px;
-                cursor: pointer;
-            
-                &:hover {
-                    background-color: darken($color: $dorado, $amount: 5)
-                }
-              }
-          }
+        #boton-aceptar {
+            background-color: $dorado;
+            border-radius: 5px;
+            border: none;
+            padding: 6px 18px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        
+            &:hover {
+                background-color: darken($color: $dorado, $amount: 5)
+            }
+            }
+        }
 
-    }
+}
 
 
 
