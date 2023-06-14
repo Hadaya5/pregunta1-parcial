@@ -12,6 +12,7 @@ import "./App.css";
 import { useEffect, useState } from "react";
 import { Inicio } from "./routes/Inicio";
 import { AuthContextProvider } from "./context/AuthContext";
+import { Contacto } from "./routes/Contacto";
 
 function App() {
     const [autorizacion, setAutorizacion] = useState(null);
@@ -80,7 +81,8 @@ function App() {
                                 <Route
                                     exact
                                     path="/datos-contacto"
-                                    element={<>/datos-contacto</>}
+                                    // element={<>hey</>}
+                                    element={<Contacto/>}
                                 />
                                 {/* Ruta predeterminada */}
                                 <Route
