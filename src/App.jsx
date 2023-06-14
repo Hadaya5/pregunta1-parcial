@@ -11,6 +11,7 @@ import { NavPrincipal } from "./components/NavPrincipal";
 import "./App.css";
 import { useEffect, useState } from "react";
 import { Inicio } from "./routes/Inicio";
+import { AuthContextProvider } from "./context/AuthContext";
 
 function App() {
     const [autorizacion, setAutorizacion] = useState(null);
@@ -26,6 +27,7 @@ function App() {
 
     return (
         <>
+          <AuthContextProvider>
             <Router>
                 <>
                     {!autorizacion ? (
@@ -81,15 +83,16 @@ function App() {
                                     element={<>/datos-contacto</>}
                                 />
                                 {/* Ruta predeterminada */}
-                                {/* <Route
+                                <Route
                                     path="*"
-                                    element={<Navigate to="/login" />}
-                                /> */}
+                                    element={<Navigate to="/inicio" />}
+                                /> 
                             </Routes>
                         </NavPrincipal>
                     )}
                 </>
             </Router>
+          </AuthContextProvider>
         </>
     );
 }
