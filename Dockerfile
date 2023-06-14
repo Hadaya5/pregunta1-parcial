@@ -19,5 +19,8 @@ RUN npm run build
 # Expose the desired port (replace 3000 with the port used by your CRA app)
 EXPOSE 3000
 
+# Create a volume for the /app directory
+VOLUME [ "/app" ]
+
 # Start the application
 CMD [ "npm", "start" ]
