@@ -17,9 +17,8 @@ export const IniciarSesion = () => {
         i18n.changeLanguage( language );
        // e.preventDefault()
         const username = e.target.elements.username.value;
-        const password = e.target.elements.password.value;
 
-        if (username && password) {
+        if (username) {
             // Ambos campos tienen contenido, enviar formulario
             console.log("Enviando formulario");
             // Actualizar un valor en localStorage
@@ -42,17 +41,15 @@ export const IniciarSesion = () => {
                         <div className='field'>
                             <input type="text" name="username" required placeholder={t('login.placeholder1')}/>
                         </div>
-                        <div className='field'>
-                            <input type="password" name="password" required placeholder={t('login.placeholder1')} />
-                        </div>
-                    
-                    </div>
-    
                         <select id="language" name="language" className='field' value={language} onChange={ e => setLanguage(e.target.value) }>
                             <option value="" disabled selected>{t('login.placeholder2')}</option>
                             <option value="en">Inglés</option>
                             <option value="es">Español</option>
                         </select>
+                    
+                    </div>
+    
+                        
                    
     
                     <button type="submit">{t('login.boton')}</button>
