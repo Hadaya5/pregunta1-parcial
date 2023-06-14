@@ -3,6 +3,8 @@ import { IniciarSesion } from "./routes/IniciarSesion";
 import {NavPrincipal} from './components/NavPrincipal';
 import "./App.css";
 import { useEffect, useState } from "react";
+import {NotificarPago} from './routes/NotificarPago';
+
 
 function App() {
    
@@ -41,7 +43,7 @@ function App() {
                                 <Route
                                     exact
                                     path="/notificar-pago"
-                                    element={<> hola notificar pago</>}
+                                    element={<NotificarPago/>}
                                 />
                                 <Route
                                     exact

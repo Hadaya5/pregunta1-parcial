@@ -52,14 +52,15 @@
     height: 90%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     background-color: $blanco;
 }
 
 .opcionesMenu{
     background-color: $azul-claro;
-    margin: 1em 0em;
+    margin-top: 0.8em;
+    //margin: 1em 0em;
     width: 100%;
     display: flex;
     justify-content: flex-start;

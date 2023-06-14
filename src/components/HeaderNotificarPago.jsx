@@ -4,34 +4,72 @@ import '../styles/HeaderNotificarPago.scss';
 
 
 export const HeaderNotificarPago = ({
-    arrayFases
+    arrayFases,
+    funcionAtras,
+    funcionContinuar,
+    proceso,
+    selectItem,
 }) => {
+
     return (
-        <section className='containerHPrincipal'>
-            <section className='containerHeader'>
+        <section className='containerHPrincipalNP'>
+            <section className='containerHeaderNP'>
                 <img
                     src={logo}
+                    style={{width:'4em'}}
                 />
                 <p>Vivienda xx</p>
-            </section>
-            <section className='containerMain'>
-                {
-                    arrayFases.map(item => (
-                        <section className='containerBotton'>
-                            "pago x"
-                        </section>
-                    ))
-                }
-
-            </section>
-            <section className='containerFooter'>
-                <button className='bottonOpcion'>Atras</button>
-                <section className='containerMedio'>
-                    <p> texto texto texto texto</p>
+                <section>
+                    <p> Notifiar Pago</p>
                 </section>
-                <button bottonOpcion>Continuar</button>
-
             </section>
+                {
+                    arrayFases.length ? 
+                    <>
+                        <section className='containerMainNP'>
+                            {
+                                arrayFases.map((item, index) => (
+                                    <section key={`fase-000-${index}`} className={item?.activo ? 'containerBottonNPActivo' :'containerBottonNPInactivo' }>
+                                    <p>
+                                            {item?.label}
+                                    </p>
+                                    </section>
+                                ))
+
+                            }
+                        </section>
+                        <section className='containerFooterNP'>
+                            {
+                                proceso ===1  ?
+                                    <section></section>
+                                :
+                                <button 
+                                    className='bottonOpcionNP'
+                                    onClick={() => funcionAtras()}
+                                    >Atras
+                                </button>
+                            }
+                            <section className='containerMedioNP'>
+                                <p> {selectItem?.texto}</p>
+                            </section>
+                            { 
+                                proceso === 6 ?
+                                <section></section>
+                                :
+                                <button 
+                                    className='bottonOpcionNP' 
+                                    onClick={() => funcionContinuar()}
+                                    >
+                                        Continuar
+                                    </button>
+
+                            }
+
+                        </section>
+                    </>
+                    : null
+            }
+
         </section>
     );
 };
