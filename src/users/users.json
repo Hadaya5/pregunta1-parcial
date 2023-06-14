@@ -1,0 +1,22 @@
+{
+    "users": [
+        {
+            "type": "CEO",
+            "code": "159753",
+            "name": "Rodolfo Sanchéz",
+            "email": "rodolfos@gmail.com"
+        },
+        {
+            "type": "Asistente",
+            "code": "957365",
+            "name": "Luis Arteaga",
+            "email": "luis52@gmail.com"
+        },
+        {
+            "type": "Usuario",
+            "code": "548921",
+            "name": "Hadaya Hadaya",
+            "email": "hadaya@gmail.com"
+        }
+    ]
+}
