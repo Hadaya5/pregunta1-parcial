@@ -14,22 +14,22 @@ export const HeaderNotificarPago = ({
                 />
                 <p>Vivienda xx</p>
             </section>
-            <section>
+            <section className='containerMain'>
                 {
                     arrayFases.map(item => (
-                        <section>
+                        <section className='containerBotton'>
                             "pago x"
                         </section>
                     ))
                 }
 
             </section>
-            <section>
-                <button>Atras</button>
-                <section>
+            <section className='containerFooter'>
+                <button className='bottonOpcion'>Atras</button>
+                <section className='containerMedio'>
                     <p> texto texto texto texto</p>
                 </section>
-                <button>Continuar</button>
+                <button bottonOpcion>Continuar</button>
 
             </section>
         </section>
