@@ -8,7 +8,7 @@ import AuthContext from '../context/AuthContext';
 
 
 export const Inicio = () => {
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
     const [isOpen, setIsOpen] = useState(false)
     const [userType, setUserType] = useState('')
     const {authState, setAuthState} = useContext(AuthContext);
@@ -16,6 +16,9 @@ export const Inicio = () => {
 
     useEffect(() => {
         const token = localStorage.getItem("token");
+        const language = localStorage.getItem("language");
+        i18n.changeLanguage( language );
+
         for(let i=0; i < usuarios.length; i++){
             if(token == usuarios[i].code){
                 setAuthState(
