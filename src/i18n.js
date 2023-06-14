@@ -7,6 +7,9 @@ import forgotPassword_en from "./locales/en/ForgotPassword.json"
 
 import login_es from "./locales/es/IniciarSesion.json"
 import forgotPassword_es from "./locales/es/ForgotPassword.json"
+import opcionesNav_es from './locales/es/nav.json';
+//import opcionesNav_en from './locales/en/nav.json';;
+
 
 
 const en = Object.assign(
@@ -18,7 +21,8 @@ const en = Object.assign(
 const es = Object.assign(
     {},
     login_es,
-    forgotPassword_es
+    forgotPassword_es,
+    opcionesNav_es,
 );
 
 
