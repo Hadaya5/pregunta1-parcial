@@ -1,0 +1,144 @@
+@import 'colors';
+@import 'reactjs-popup/dist/index.css';
+
+#popup-2{
+    padding: 0;
+    border: 1px solid black;
+}
+
+    #popup-container {
+        height: 32vh;
+
+        #descripcion-vivienda{
+            background-color: $azul-oscuro;
+            height: 100%;    
+            color: $blanco;
+          }
+
+          .header {
+            background-color: $azul-claro;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            padding: 0.7rem 0;
+          }
+          
+          .modal {
+            padding: 0px 20px;
+          }
+        
+          div {
+            display: flex;
+            justify-content: center;
+
+            #boton-aceptar {
+                background-color: $dorado;
+                border-radius: 5px;
+                border: none;
+                padding: 6px 18px;
+                color: white;
+                font-size: 16px;
+                cursor: pointer;
+            
+                &:hover {
+                    background-color: darken($color: $dorado, $amount: 5)
+                }
+              }
+          }
+
+    }
+
+
+
+.Inicio {
+    display: flex;
+    justify-content: space-around;
+
+    .bold {
+        font-weight: bold;
+    }
+
+    .columna1 {
+        width: 50%;
+        margin-left: 3rem;
+
+        #title {
+            color: $dorado;
+            text-align: center;
+        }
+
+        #box1 {
+            color: $blanco;
+            background-color: $azul-oscuro;
+            width: 50%;
+            height: 2rem;
+        }
+
+        div {
+
+            #boxVideo {
+                color: $blanco;
+                background-color: $azul-oscuro;
+                padding: 5rem 0rem;
+                text-align: center;
+            }
+        }
+    }
+
+    .columna2 {
+        margin-left: 3rem;
+        margin-right: 3rem;
+        width: 50%;
+
+        .titleTable {
+            text-align: center;
+            color: $blanco;
+            background-color: $azul-oscuro;
+        }
+
+        .container1 {
+            display: flex;
+            justify-content: space-around;
+            line-height: 0.6rem;
+
+            .subcolumna2 {
+                #link {
+                    color: $azul-oscuro;
+                    cursor: pointer;
+                }
+            }
+        }
+        .container2 {
+            display: flex;
+            justify-content: space-around;
+            line-height: 0.6rem;
+            background-color: $azul-oscuro;
+            padding: 7px 0px 3px 0px;
+            height: 1rem;
+
+            .box2 {
+                color: $blanco; 
+            }
+
+        }
+
+        #center-button {
+            display: flex;
+            justify-content: center;
+
+            button {
+                background-color: $verde;
+                border-radius: 5px;
+                border: none;
+                padding: 6px 18px;
+                color: white;
+                font-size: 16px;
+                cursor: pointer;
+    
+                &:hover {
+                    background-color: darken($color: $verde, $amount: 5)
+                }
+            }
+        }   
+    }
+}

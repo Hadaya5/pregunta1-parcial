@@ -10,6 +10,7 @@ import { ResetPassword } from './routes/ResetPassword';
 import { NavPrincipal } from "./components/NavPrincipal";
 import "./App.css";
 import { useEffect, useState } from "react";
+import { Inicio } from "./routes/Inicio";
 
 function App() {
     const [autorizacion, setAutorizacion] = useState(null);
@@ -55,14 +56,15 @@ function App() {
                             <Routes>
                                 <Route
                                     exact
-                                    path="/notificar-pago"
-                                    element={<> hola notificar pago</>}
+                                    path="/inicio"
+                                    element={<Inicio/>}
                                 />
                                 <Route
                                     exact
-                                    path="/inicio"
-                                    element={<> inicio</>}
+                                    path="/notificar-pago"
+                                    element={<> hola notificar pago</>}
                                 />
+                                
                                 <Route
                                     exact
                                     path="/monitorear-publicacion"
