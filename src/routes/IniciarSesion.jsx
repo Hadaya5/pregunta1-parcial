@@ -16,7 +16,6 @@ export const IniciarSesion = () => {
 
 
     const handleSubmit = (e) => {
-        
         i18n.changeLanguage( language );
         
         const code = e.target.elements.code.value;
@@ -42,6 +41,7 @@ export const IniciarSesion = () => {
             // Actualizar un valor en localStorage
             const token = code;
             localStorage.setItem('token', token);
+            localStorage.setItem('language', language);
             navigate('/inicio');
             return;
         }
