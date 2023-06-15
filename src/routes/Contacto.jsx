@@ -18,24 +18,30 @@ export const Contacto = () => {
             <div className="container">
                 <div className="info">
 
-                    <div id="telefonos">
-                        {t("contacto.telefonos")}
+                    <div className="info-field" id="telefonos">
+                        <span>
+                            {t("contacto.telefonos")}
+                        </span>
                         <ul>
                             <li>+58 (0212)-362-82-68</li>
-                            <li>+58+0414-389-74-44</li>
+                            <li>+58 0414-389-74-44</li>
                         </ul>
                     </div>
 
-                    <div id="atencion">
-                        {t("contacto.atencion")}
+                    <div className="info-field" id="atencion">
+                        <span>
+                            {t("contacto.atencion")}
+                        </span>
                         <ul>
-                            <li>{t("contacto.lunes_viernes")}: {t("contacto.horario")}</li>
-                            <li>{t("contacto.sabados_domingos")}: {t("contacto.horario")}</li>
+                            <li><span>{t("contacto.lunes_viernes")}:</span> {t("contacto.horario")}</li>
+                            <li><span>{t("contacto.sabados_domingos")}:</span> {t("contacto.horario")}</li>
                         </ul>
                     </div>
 
-                    <div id="email">
-                        {t("contacto.correo")}
+                    <div className="info-field" id="email">
+                        <span>
+                            {t("contacto.correo")}
+                        </span>
                         <ul>
                             <li>{t("contacto.envia_correo")}</li>
                             <li>nirvana01@gmail.com</li>
@@ -43,8 +49,10 @@ export const Contacto = () => {
                         
                     </div>
 
-                    <div id="link-container">
-                        {t("contacto.enlaces_interes")}
+                    <div className="info-field" id="link-container">
+                        <span>
+                            {t("contacto.enlaces_interes")}
+                        </span>
                         <ul>
                             <li>
                                 <a href=""> {t("contacto.preguntas")} </a>
@@ -55,8 +63,10 @@ export const Contacto = () => {
                         </ul>
                     </div>
 
-                    <div id="social-media">
-                        {t("contacto.siguenos")}  
+                    <div className="info-field" id="social-media">
+                        <span>
+                            {t("contacto.siguenos")}  
+                        </span>
                         <ul>
                             <li>Facebook</li>
                             <li>Twitter</li>
@@ -73,9 +83,9 @@ export const Contacto = () => {
                     </div>
                     <form action="">
                         <h3>{t("contacto.formulario")}</h3>
-                        <input placeholder={t("contacto.para")} type="text" name="" id="" />
-                        <input placeholder={t("contacto.nombre")} type="text" name="" id="" />
-                        <input placeholder={t("contacto.asunto")} type="text" name="" id="" />
+                        <input placeholder={t("contacto.para")} type="text" name="" id="" />    <br/>
+                        <input placeholder={t("contacto.nombre")} type="text" name="" id="" />  <br/>
+                        <input placeholder={t("contacto.asunto")} type="text" name="" id="" />  <br/>
                         <button>{t("contacto.enviar")}</button>
                     </form>
                 </div>
