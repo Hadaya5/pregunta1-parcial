@@ -17,6 +17,18 @@
         "para": "For",
         "nombre": "Name and surname",
         "asunto": "Subject",
-        "enviar": "Send"
+        "enviar": "Send",
+        "datos": "Contact information",
+        "tipo": "Type",
+        "valor": "Value",
+        "accion": "Action",
+        "eliminar": "Delete",
+        "modificar": "Modify",
+        "agregar": "Add other contact information",
+        "actualizar": "Update",
+        "agregarr": "Add Record",
+        "telefonom": "Mobile Phone",
+        "telefonof": "landline",
+        "email": "Email"
     }
 }
