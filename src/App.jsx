@@ -14,6 +14,8 @@ import { Inicio } from "./routes/Inicio";
 import { AuthContextProvider } from "./context/AuthContext";
 import { NotificarPago } from './routes/NotificarPago';
 import { Cotizaciones } from "./routes/Cotizaciones";
+import FormaPago from "./routes/FormaPago";
+
 
 import { Contacto } from "./routes/Contacto";
 
@@ -85,7 +87,7 @@ function App() {
                                 <Route
                                     exact
                                     path="/forma-de-pago"
-                                    element={<> forma-de-pago</>}
+                                    element={<FormaPago/>}
                                 />
                                 <Route
                                     exact
