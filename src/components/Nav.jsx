@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import '../styles/NavBar.scss';
-
+import AuthContext from '../context/AuthContext';
 import { useTranslation } from 'react-i18next';  
 import perfil from '../assets/default-user-icon.jpg'
 import { useNavigate } from 'react-router-dom';
@@ -58,6 +58,7 @@ export const NavBar = ({
     );
 };
 
+
 const ITEM = [
     {
         label: "nav.inicio",
@@ -94,11 +95,24 @@ export const NavMenu = ({
 }) => {
     const { t, i18n } = useTranslation();
     const navigate = useNavigate();
+    const {authState, setAuthState} = useContext(AuthContext);
+
+    if ( authState.type == "CEO"){
+        ITEM[1] = {
+                label: "nav.cotizacion",
+                path: "/cotizacion"
+        }
+        
+    }
+
+    /*label: (() => ItemNav()) ? "nav.cotizacion" : "nav.monitoreo",
+        path: (() => ItemNav()) ? "/cotizaciones" : "/monitorear-publicacion",*/
+
     return(
         <section className='containerMenu'>
             {
                 ITEM.map((item, index) => (
-
+                    
                     <section 
                         onClick={() =>{
                             console.log("item.label item.label", item.label);

@@ -3,7 +3,7 @@ import '../styles/Inicio.scss'
 import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
 import { useTranslation } from 'react-i18next'; 
-import users from "../users/users.json"
+import users from "../data/users.json"
 import AuthContext from '../context/AuthContext';
 
 
@@ -13,6 +13,86 @@ export const Inicio = () => {
     const [userType, setUserType] = useState('')
     const {authState, setAuthState} = useContext(AuthContext);
     const usuarios = users.users;
+
+    const [notificacionEnProceso, setNotificacionEnProceso] = useState([{
+        fecha: '02-04-2019',
+        hora: '11:12 am',
+        banco: 'Banesco Panamá',
+        nroTransferencia: '000-021-324-35-678',
+        monto: '30 USD',
+        cliente: 'Click aquí',
+        nroConfirmacion: '452682',
+        checked: '1'
+    },
+    {
+        fecha: '15-04-2019',
+        hora: '11:12 am',
+        banco: 'Banesco Panamá',
+        nroTransferencia: '000-027-425-45-675',
+        monto: '27 USD',
+        cliente: 'Click aquí',
+        nroConfirmacion: '134862',
+        checked: '2'
+    },
+    {
+        fecha: '05-05-2020',
+        hora: '11:12 am',
+        banco: 'Mercantil Panamá',
+        nroTransferencia: '000-023-456-73-841',
+        monto: '52 USD',
+        cliente: 'Click aquí',
+        nroConfirmacion: '723675',
+        checked: '3'
+    }
+    
+
+    ])
+
+
+    const [notificacionRechazada, setNotificacionRechazada] = useState([
+        {
+            fecha: '25-12-2022',
+            hora: '01:50 pm',
+            banco: 'Mercantil Venezuela',
+            nroTransferencia: '000-125-599-91-752',
+            monto: '26 USD',
+            cliente: 'Click aquí',
+            nroConfirmacion: '475698',
+            checked: '4'
+        },
+        {
+            fecha: '30-10-2022',
+            hora: '01:52 pm',
+            banco: 'Bancaribe Venezuela',
+            nroTransferencia: '000-147-822-96-741',
+            monto: '59 USD',
+            cliente: 'Click aquí',
+            nroConfirmacion: '752415',
+            checked: '7'
+        },
+        {
+            fecha: '12-06-2015',
+            hora: '11:23 pm',
+            banco: 'Bancaribe Venezuela',
+            nroTransferencia: '000-586-075-56-782',
+            monto: '25 USD',
+            cliente: 'Click aquí',
+            nroConfirmacion: '197503',
+            checked: '6'
+        }
+    ])
+    const [notificacionProcesada, setNotificacionProcesada] = useState([
+        {
+            fecha: '06-09-2015',
+            hora: '05:51 pm',
+            banco: 'Bancamiga',
+            nroTransferencia: '000-125-652-12-752',
+            monto: '42 USD',
+            cliente: 'Click aquí',
+            nroConfirmacion: '926982',
+            checked: '5'
+        }
+    ])
 
     useEffect(() => {
         const token = localStorage.getItem("token");
@@ -37,24 +117,163 @@ export const Inicio = () => {
         }
     }, []);
 
+    const handleNotificacionEnProceso = () => {
+
+        notificacionEnProceso.map( notif => {
+            let checkbox = document.getElementById( notif.checked );
+
+            if ( checkbox.checked ){
+                
+                setNotificacionProcesada([...notificacionProcesada, notif]);
+                const aux = notificacionEnProceso.filter( e => e.checked !== notif.checked )
+                setNotificacionEnProceso(aux)
+            }
+        })
+    }
+
+
+    const handleNotificacionRechazada = () => {
+        
+        notificacionRechazada.map( notif => {
+            let checkbox = document.getElementById( notif.checked );
+
+            if ( checkbox.checked ){
+                
+                setNotificacionProcesada([...notificacionProcesada, notif]);
+                const aux = notificacionRechazada.filter( e => e.checked !== notif.checked )
+                setNotificacionRechazada(aux)
+            }
+        })
+    }
+
   return (
 <>
-    {   userType === 'CEO' 
+    {   userType === 'CEO' || userType === 'Asistente'
         ? 
-        <h2>CEO</h2>
-        :
-        null
-    }
+            <div id='containerCEO'>
+                <h2>Leyenda</h2>
+                <div id="containerBox1">
+                    <p id="box1">Mis notificaciones</p>
+                </div>
+                <div id="containerStatus">
+                    <div>
+                        <p className='estatus'>Estatus</p>
+                        <p className='estatus proceso1'>En proceso</p>
+                    </div>
+                    <div>
+                        <p className='estatus'>Estatus</p>
+                        <p className='estatus proceso2'>Procesada</p>
+                    </div>
+                    <div>
+                        <p className='estatus'>Estatus</p>
+                        <p className='estatus proceso3'>Rechazada</p>
+                    </div>
+                </div>
 
-    {   userType === 'Asistente'
-        ? 
-        <h2>Asistente</h2>
-        :
-        null
-    }
+                
 
-    {   userType === 'Usuario'
-        ? 
+                <div id='containerTables'>
+                    <div className='containerButtons'>
+                        <button id='botonProcesar' onClick={ handleNotificacionEnProceso }>Procesada</button>
+                        <button id='botonRechazar'>Rechazada</button>
+                    </div>
+
+                    <h1 id="enProceso">En proceso</h1>
+                    <p className='misNotificaciones'>Mis notificaciones</p>
+                    <table>
+                        <tr>
+                            <th className='border-checkbox' ></th>
+                            <th>Fecha de notificación de pago</th>
+                            <th>Hora</th>
+                            <th>Banco destino</th>
+                            <th>Nro. de transferencia</th>
+                            <th>Monto</th>
+                            <th>Cliente</th>
+                            <th>Nro. de confirmación</th>
+                        </tr>
+
+                        {notificacionEnProceso.map( notif => 
+                            <tr>
+                                <td className='border-checkbox'><input type="checkbox" id={notif.checked}/></td>
+                                <td>{notif.fecha}</td>
+                                <td>{notif.hora}</td>
+                                <td>{notif.banco}</td>
+                                <td>{notif.nroTransferencia}</td>
+                                <td>{notif.monto}</td>
+                                <td><a href="#">Click aquí</a></td>
+                                <td><a href="#">{notif.nroConfirmacion}</a></td>
+                            </tr>
+                            )
+                        }
+
+                    </table>
+
+                    <h1 id="procesada">Procesada</h1>
+                    <p className='misNotificaciones'>Mis notificaciones</p>
+                    <table>
+                        <tr>
+                            <th className='border-checkbox' ></th>
+                            <th>Fecha de notificación de pago</th>
+                            <th>Hora</th>
+                            <th>Banco destino</th>
+                            <th>Nro. de transferencia</th>
+                            <th>Monto</th>
+                            <th>Cliente</th>
+                            <th>Nro. de confirmación</th>
+                        </tr>
+                        {notificacionProcesada.map( notif => 
+                            <tr>
+                                <td className='border-checkbox'><input type="checkbox"/></td>
+                                <td>{notif.fecha}</td>
+                                <td>{notif.hora}</td>
+                                <td>{notif.banco}</td>
+                                <td>{notif.nroTransferencia}</td>
+                                <td>{notif.monto}</td>
+                                <td><a href="#">Click aquí</a></td>
+                                <td><a href="#">{notif.nroConfirmacion}</a></td>
+                            </tr>
+                            )
+                        }
+                    </table>
+
+                    <div className='containerButtons'>
+                        <button id='botonEnviar'>Enviar correo</button>
+                        <button onClick={ handleNotificacionRechazada } id='botonProcesar'>Procesada</button>
+                    </div>
+
+                    <h1 id="rechazada">Rechazada</h1>
+                    <p className='misNotificaciones'>Mis notificaciones</p>
+                    <table>
+                        <tr>
+                            <th className='border-checkbox' ></th>
+                            <th>Fecha de notificación de pago</th>
+                            <th>Hora</th>
+                            <th>Banco destino</th>
+                            <th>Nro. de transferencia</th>
+                            <th>Monto</th>
+                            <th>Cliente</th>
+                            <th>Nro. de confirmación</th>
+                        </tr>
+                        {notificacionRechazada.map( notif => 
+                            <tr>
+                                <td className='border-checkbox'><input type="checkbox" id={notif.checked}/></td>
+                                <td>{notif.fecha}</td>
+                                <td>{notif.hora}</td>
+                                <td>{notif.banco}</td>
+                                <td>{notif.nroTransferencia}</td>
+                                <td>{notif.monto}</td>
+                                <td><a href="#">Click aquí</a></td>
+                                <td><a href="#">{notif.nroConfirmacion}</a></td>
+                            </tr>
+                            )
+                        }
+                    </table>
+                </div>
+
+            </div>
+
+        :
+
             <div className='Inicio'>
                 <div className='columna1'>
                     <h3 id='title'>{t('inicio.vivienda')} XXX</h3>
@@ -95,7 +314,7 @@ export const Inicio = () => {
                             <p className='simulacion'>Viernes 11/07/2019</p>
                             <p className='simulacion'>Estados Unidos</p>
                             <p className='simulacion'>Alquiler</p>
-                            <p className='simulacion'>Inglés</p>
+                            <p className='simulacion'>Español</p>
                         </div>
                     </div>
                     
@@ -124,8 +343,7 @@ export const Inicio = () => {
 
                 </div>
             </div>
-        :
-        null
+
     }
 
 

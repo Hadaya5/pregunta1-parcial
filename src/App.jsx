@@ -61,6 +61,12 @@ function App() {
                                     path="/inicio"
                                     element={<Inicio/>}
                                 />
+
+                                <Route
+                                    exact
+                                    path="/cotizaciones"
+                                    element={<> COTIZACINES</>}
+                                />
                                 <Route
                                     exact
                                     path="/notificar-pago"

@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react'
 import { useTranslation } from 'react-i18next';  
 import "../styles/IniciarSesion.scss"
 import { useNavigate } from 'react-router-dom';
-import users from "../users/users.json"
+import users from "../data/users.json"
 import AuthContext from '../context/AuthContext';
 
 export const IniciarSesion = () => {
@@ -61,7 +61,7 @@ export const IniciarSesion = () => {
                         <div className='field'>
                             <input type="text" name="code" required placeholder={t('login.placeholder1')}/>
                         </div>
-                        <select id="language" name="language" className='field' value={language} onChange={ e => setLanguage(e.target.value) }>
+                        <select id="language" name="language" className='field' value={language} required onChange={ e => setLanguage(e.target.value) }>
                             <option value="" disabled selected>{t('login.placeholder2')}</option>
                             <option value="en">Inglés</option>
                             <option value="es">Español</option>
