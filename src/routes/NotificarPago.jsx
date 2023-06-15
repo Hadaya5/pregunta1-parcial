@@ -1387,7 +1387,7 @@ export const NotificarPago = () => {
 
     const [selectItem, setSelectItem] = useState({});
     const [opciones, setOpciones] = useState(arrayFases);
-    const [proceso, setProceso] = useState(6);
+    const [proceso, setProceso] = useState(1);
     const [infFase01, setInfFase01] = useState({});
     const [infFase02, setInfFase02] = useState({});
     const [infFase03, setInfFase03] = useState({});
