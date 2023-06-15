@@ -68,6 +68,9 @@
         "datosTransferenciaDeposito": "Transfer or deposit information",
         "paisBancoOrigen": "Country where the account of the originating bank resides",
         "fechaHizoDeposito": "Date deposit was made",
-        "numeroTransferencia": "Transfer number"
+        "numeroTransferencia": "Transfer number",
+        "cuentabanco": "Banesco Panamá - Nro de cuenta: 201800948693 – Código SWIFT: BANSPAPA",
+        "seleccionarBanco":"Select the Destination Bank"
+    
     }
 }
