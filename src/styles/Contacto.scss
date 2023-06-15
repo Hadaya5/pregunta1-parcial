@@ -34,6 +34,19 @@
                     list-style-type: none;
                     padding: 0;
                     padding-left: 1.25rem;
+
+                    .fa{
+                        font-weight: normal;
+                        background-color: $azul-oscuro;
+                        width: 25px;
+                        line-height: 25px;
+                        height: 25px;
+                        text-align: center;
+                        text-justify: center;
+                        border-radius: 25px;
+                        color: white;
+                        margin-top: 0.5rem;
+                    }
                 }
             }
 

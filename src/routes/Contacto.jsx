@@ -72,11 +72,11 @@ export const Contacto = () => {
                             {t("contacto.siguenos")}  
                         </span>
                         <ul>
-                            <li>Facebook</li>
-                            <li>Twitter</li>
-                            <li>Youtube</li>
-                            <li>Instagram</li>
-                            <li>LinkedIn</li>
+                            <li><span class="fa fa-facebook"></span>  Facebook</li>
+                            <li><span class="fa fa-twitter"></span> Twitter</li>
+                            <li><span class="fa fa-youtube"></span> Youtube</li>
+                            <li><span class="fa fa-instagram"></span> Instagram</li>
+                            <li><span class="fa fa-linkedin"></span> LinkedIn</li>
                         </ul>                      
                     </div>
 
@@ -95,5 +95,6 @@ export const Contacto = () => {
                 </div>
             </div>
         </div>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
     </>
 }
