@@ -13,6 +13,8 @@ import { useEffect, useState } from "react";
 import { Inicio } from "./routes/Inicio";
 import { AuthContextProvider } from "./context/AuthContext";
 import {NotificarPago} from './routes/NotificarPago';
+import FormaPago from "./routes/FormaPago";
+
 
 
 function App() {
@@ -83,7 +85,7 @@ function App() {
                                 <Route
                                     exact
                                     path="/forma-de-pago"
-                                    element={<> forma-de-pago</>}
+                                    element={<FormaPago/>}
                                 />
                                 <Route
                                     exact

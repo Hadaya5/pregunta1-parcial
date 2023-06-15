@@ -15,7 +15,10 @@ import inicio_es from "./locales/es/Inicio.json"
 import opcionesNav_en from './locales/en/nav.json';
 import notificarPago_es from './locales/es/NotificarPago.json';
 import notificarPago_en from './locales/en/NotificarPago.json';
+import FormaPago from './routes/FormaPago';
 
+import FormaPago_en from './locales/en/FormaPago.json'
+import FormaPago_es from './locales/es/FormaPago.json'
 
 const en = Object.assign(
     {},
@@ -24,6 +27,7 @@ const en = Object.assign(
     inicio_en,
     opcionesNav_en,
     notificarPago_en,
+    FormaPago_en
 );
 
 const es = Object.assign(
@@ -34,6 +38,7 @@ const es = Object.assign(
     inicio_es,
     opcionesNav_es,
     notificarPago_es,
+    FormaPago_es
 );
 
 
