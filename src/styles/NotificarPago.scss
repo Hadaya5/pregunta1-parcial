@@ -23,6 +23,24 @@
     }
 
 }
+
+.selectFase02{
+    width: 100%;
+    background-color: transparent;
+    color: $negro;
+    font-weight: bolder;
+    //border: 3px $azul-claro solid;
+    font-size: 1em;
+    height: 5vh;
+    margin-top: 1em;
+    option{
+        color: $negro
+    }
+}
+
+.selectFase02:focus {
+    outline: none;
+  }
 .selectFase01:focus {
     outline: none;
   }

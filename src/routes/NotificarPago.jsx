@@ -302,11 +302,28 @@ export const Fase03 = ({ onSubmit, botonEnviarRef }) => {
     };
     const manejarChange = (evento) => {
         const { name, value } = evento.target;
-        // console.log("manejar change",evento.target)
-        setFormulario({
-            ...formulario,
-            [name]: value,
-        });
+
+        console.log("-------------", name)
+        if (name === "bancoDestino") {
+            
+            const selectedOption = evento.target.options[evento.target.selectedIndex];
+
+            setFormulario({
+                ...formulario,
+                'bancoDestino': selectedOption.value,
+            });
+
+        } else {
+            setFormulario({
+                ...formulario,
+                [name]: value,
+            });
+        }
+        // // console.log("manejar change",evento.target)
+        // setFormulario({
+        //     ...formulario,
+        //     [name]: value,
+        // });
     };
 
     return (
@@ -315,7 +332,7 @@ export const Fase03 = ({ onSubmit, botonEnviarRef }) => {
                 <section className="containerRowForm">
                     <label> {t("notPago.monto")}</label>
                     <input
-                        type="text"
+                        type="number"
                         name="monto"
                         value={formulario.monto}
                         onChange={manejarChange}
@@ -344,23 +361,41 @@ export const Fase03 = ({ onSubmit, botonEnviarRef }) => {
                 </section>
                 <section className="containerRowForm">
                     <label>{t("notPago.paisCuentaBancoOrigen")}</label>
+            
                     <input
                         type="text"
                         name="paisCuentaBancoOrigen"
                         value={formulario.paisCuentaBancoOrigen}
                         onChange={manejarChange}
                         required
-                    />
+                    /> 
                 </section>
                 <section className="containerRowForm">
                     <label>{t("notPago.bancoDestino")}</label>
-                    <input
+                    <select
+                        className="selectFase02"
+                        id="text"
+                        value={formulario.bancoDestino}
+                        onChange={manejarChange}
+                        name="bancoDestino"
+                    >
+                        <option value="">{t("notPago.seleccionarBanco")}</option>
+                        {[
+                            { label: `${t("notPago.cuentabanco")}`, value: "Banesco Panamá - Nro de cuenta: 201800948693 – Código SWIFT: BANSPAPA" },
+        
+                        ].map((x, i) => (
+                            <option key={i + 1} value={x?.value}>
+                                {x?.label}
+                            </option>
+                        ))}
+                    </select>
+                   {/*  <input
                         type="text"
                         name="bancoDestino"
                         value={formulario.bancoDestino}
                         onChange={manejarChange}
                         required
-                    />
+                    /> */}
                 </section>
                 <section className="containerRowForm">
                     <label>{t("notPago.fechaDeposito")} </label>

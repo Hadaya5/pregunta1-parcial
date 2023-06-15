@@ -71,7 +71,9 @@
         "datosTransferenciaDeposito": "Datos de la transferencia o deposito",
         "paisBancoOrigen": "Pais donde reside la cuenta del banco origen",
         "fechaHizoDeposito": "Fecha en que se hizo el deposito",
-        "numeroTransferencia": "Numero de transferencia"
+        "numeroTransferencia": "Numero de transferencia",
+        "cuentabanco": "Banesco Panamá - Nro de cuenta: 201800948693 – Código SWIFT: BANSPAPA",
+        "seleccionarBanco":"Seleccione el Banco Destino"
     
     }
 
