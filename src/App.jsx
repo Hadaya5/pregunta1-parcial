@@ -14,6 +14,7 @@ import { Inicio } from "./routes/Inicio";
 import { AuthContextProvider } from "./context/AuthContext";
 import {NotificarPago} from './routes/NotificarPago';
 
+import { Contacto } from "./routes/Contacto";
 
 function App() {
     const [autorizacion, setAutorizacion] = useState(null);
@@ -88,7 +89,7 @@ function App() {
                                 <Route
                                     exact
                                     path="/datos-contacto"
-                                    element={<>/datos-contacto</>}
+                                    element={<Contacto/>}
                                 />
                                 {/* Ruta predeterminada */}
                                 <Route

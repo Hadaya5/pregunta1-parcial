@@ -1,26 +1,26 @@
-# Base image
+# Use the official Node.js 18 image.
+# https://hub.docker.com/_/node
 FROM node:18
 
-# Set the working directory
-WORKDIR /app
+# Create and change to the app directory.
+WORKDIR /usr/src/app
 
-# Copy package.json and yarn.lock (if using yarn) or package-lock.json (if using npm)
-COPY package.json package-lock.json ./
+# Copy application dependency manifests to the container image.
+# A wildcard is used to ensure both package.json AND package-lock.json are copied.
+# Copying this separately prevents re-running npm install on every code change.
+COPY package*.json ./
 
-# Install dependencies
-RUN npm install --quiet
+# Install production dependencies.
+RUN npm install
 
-# Copy the rest of the application code
+# Install react-scripts globally in the container at runtime
+RUN npm install -g react-scripts
+
+# Copy local code to the container image.
 COPY . .
 
-# Build the React app (replace `npm run build` with the appropriate build command for your CRA setup)
-RUN npm run build
-
-# Expose the desired port (replace 3000 with the port used by your CRA app)
+# Make port 3000 available to the world outside this container.
 EXPOSE 3000
 
-# Create a volume for the /app directory
-VOLUME [ "/app" ]
-
-# Start the application
+# Run the web service on container startup.
 CMD [ "npm", "start" ]
