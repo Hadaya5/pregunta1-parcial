@@ -61,7 +61,7 @@ export const NavBar = ({
 const ITEM = [
     {
         label: "nav.inicio",
-        path: "/Inicio"
+        path: "/inicio"
     },
     {
         label: "nav.monitoreo",
