@@ -1,0 +1,13 @@
+{
+ "nav":{
+    "inicio": "Start",
+    "monitoreo":"Monitor Post",
+    "notificarPago": "Notify Payment",
+    "formaPago": "Payment Methods",
+    "datoContacto":"Contact Details",
+    "contacto": "Contact us",
+    "Salir":"Go Out",
+    "nombreLogo": "Comprehensive training"
+    
+ }   
+}

@@ -1,50 +1,98 @@
 import React, { useEffect, useState, useRef } from "react";
 import { HeaderNotificarPago } from "../components/HeaderNotificarPago";
+import { useTranslation } from 'react-i18next';  
 import "../styles/NotificarPago.scss";
+
+// const arrayFases = [
+//     {
+//         label: "Cantidad de depósitos",
+//         activo: true,
+//         validacion: false,
+//         opcion: 1,
+//         texto: "1- ¿Cuántos depósitos y/o transferencias tiene para notificar?",
+//     },
+//     {
+//         label: "Tipo de Operacion",
+//         activo: false,
+//         validacion: false,
+//         opcion: 2,
+//         texto: "Seleccione la forma en que fue cancelado el adiestramiento, o el servicio ofrecido",
+//     },
+//     {
+//         label: "Datos de la transferencia /depósito",
+//         activo: false,
+//         validacion: false,
+//         opcion: 3,
+//         texto: "Datos de la transferencia/depósito",
+//     },
+//     {
+//         label: "Datos de usuario",
+//         activo: false,
+//         validacion: false,
+//         opcion: 4,
+//         texto: "Datos del usuario",
+//         textoEmpresa: "Datos de la empresa y su representante",
+//     },
+//     {
+//         label: "Datos del adiestramiento",
+//         activo: false,
+//         validacion: false,
+//         opcion: 5,
+//         texto: "Datos de la vivienda",
+//     },
+//     {
+//         label: "Recibo",
+//         activo: false,
+//         validacion: false,
+//         opcion: 6,
+//         texto: "Verifique sus datos antes de continuar",
+//     },
+// ];
+
 
 const arrayFases = [
     {
-        label: "Cantidad de depósitos",
+        label: "notPago.cantDeposito",
         activo: true,
         validacion: false,
         opcion: 1,
-        texto: "1- ¿Cuántos depósitos y/o transferencias tiene para notificar?",
+        texto: "notPago.cantDepositoTexto",
     },
     {
-        label: "Tipo de Operacion",
+        label: "notPago.tipoOperacion",
         activo: false,
         validacion: false,
         opcion: 2,
-        texto: "Seleccione la forma en que fue cancelado el adiestramiento, o el servicio ofrecido",
+        texto: "notPago.tipoOperacionTexto",
     },
     {
-        label: "Datos de la transferencia /depósito",
+        label:  "notPago.datoTransferencia",
         activo: false,
         validacion: false,
         opcion: 3,
-        texto: "Datos de la transferencia/depósito",
+        texto:  "notPago.datoTransferenciaTexto",
     },
     {
-        label: "Datos de usuario",
+        label: "notPago.datoUsuario",
         activo: false,
         validacion: false,
         opcion: 4,
-        texto: "Datos del usuario",
-        textoEmpresa: "Datos de la empresa y su representante",
+        texto: "notPago.datoUsuarioTexto",
+        textoEmpresa: "notPago.datoEmpresaTexto",
     },
     {
-        label: "Datos del adiestramiento",
+        label: "notPago.datoAdiestramiento",
         activo: false,
         validacion: false,
         opcion: 5,
-        texto: "Datos de la vivienda",
+        texto: "notPago.datoAdiestramientoTexto",
     },
     {
-        label: "Recibo",
+        label: "notPago.datoRecibo",
         activo: false,
         validacion: false,
         opcion: 6,
-        texto: "Verifique sus datos antes de continuar",
+        texto: "notPago.datoReciboTexto",
     },
 ];
 
@@ -56,6 +104,8 @@ export const Fase01 = ({
 }) => {
     const proceso = 2;
     const [selectedOption, setSelectedOption] = useState("");
+    
+    const { t, i18n } = useTranslation();
 
     const handleChange = (event) => {
         setSelectedOption(event?.target?.value);
@@ -113,7 +163,7 @@ export const Fase01 = ({
                 value={selectedOption}
                 onChange={handleChange}
             >
-                <option value="">Seleccione un número</option>
+                <option value="">{t('notPago.seleccionarNumero')}</option>
                 {[...Array(10)].map((x, i) => (
                     <option key={i + 1} value={i + 1}>
                         {i + 1}
@@ -131,6 +181,9 @@ export const Fase02 = ({
     setOpciones,
 }) => {
     const proceso = 2;
+    
+    const { t, i18n } = useTranslation();
+
     const [selectedOption, setSelectedOption] = useState("");
 
     const handleChange = (event) => {
@@ -169,6 +222,7 @@ export const Fase02 = ({
                 setSelectItem({
                     ...item,
                     validacion: false,
+               
                 });
                 return {
                     ...item,
@@ -190,10 +244,10 @@ export const Fase02 = ({
                 value={selectedOption}
                 onChange={handleChange}
             >
-                <option value="">Seleccione un Forma</option>
+                <option value="">{t('notPago.seleccionarForma')}</option>
                 {[
-                    { label: "Deposito", value: "deposito" },
-                    { label: "Transferencia", value: "transferencia" },
+                    { label: `${t('notPago.deposito')}`, value: "deposito" },
+                    { label: `${t('notPago.transferencia')}`, value: "transferencia" },
                 ].map((x, i) => (
                     <option key={i + 1} value={x?.value}>
                         {x?.label}
@@ -205,6 +259,7 @@ export const Fase02 = ({
 };
 
 export const Fase03 = ({ onSubmit, botonEnviarRef }) => {
+    const { t, i18n } = useTranslation();
     const [formulario, setFormulario] = useState({});
 
     const manejadorSubmit = (evento) => {
@@ -239,6 +294,7 @@ export const Fase03 = ({ onSubmit, botonEnviarRef }) => {
             onSubmit({
                 proceso: 3,
                 formularioCompletado: true,
+                data:formulario,
             })
         );
         return;
@@ -252,11 +308,12 @@ export const Fase03 = ({ onSubmit, botonEnviarRef }) => {
         });
     };
 
+
     return (
         <section className="containerFase01">
             <form className="formFase03" onSubmit={manejadorSubmit}>
                 <section className="containerRowForm">
-                    <label> Monto </label>
+                    <label>  {t( 'notPago.monto')}</label>
                     <input
                         type="text"
                         name="monto"
@@ -266,7 +323,7 @@ export const Fase03 = ({ onSubmit, botonEnviarRef }) => {
                     />
                 </section>
                 <section className="containerRowForm">
-                    <label>Mondeda </label>
+                    <label>  {t( 'notPago.moneda')}</label>
                     <input
                         type="text"
                         name="moneda"
@@ -276,7 +333,7 @@ export const Fase03 = ({ onSubmit, botonEnviarRef }) => {
                     />
                 </section>
                 <section className="containerRowForm">
-                    <label>Banco de origen </label>
+                    <label> {t( 'notPago.bancoOrigen')}</label>
                     <input
                         type="text"
                         name="bancoOrigen"
@@ -286,7 +343,7 @@ export const Fase03 = ({ onSubmit, botonEnviarRef }) => {
                     />
                 </section>
                 <section className="containerRowForm">
-                    <label>País donde reside la cuenta del banco origen</label>
+                    <label>{t( 'notPago.paisCuentaBancoOrigen')}</label>
                     <input
                         type="text"
                         name="paisCuentaBancoOrigen"
@@ -296,7 +353,7 @@ export const Fase03 = ({ onSubmit, botonEnviarRef }) => {
                     />
                 </section>
                 <section className="containerRowForm">
-                    <label>Banco destino </label>
+                    <label>{t( 'notPago.bancoDestino')}</label>
                     <input
                         type="text"
                         name="bancoDestino"
@@ -306,7 +363,7 @@ export const Fase03 = ({ onSubmit, botonEnviarRef }) => {
                     />
                 </section>
                 <section className="containerRowForm">
-                    <label>Fecha en que se hizo el depósito </label>
+                    <label>{t( 'notPago.fechaDeposito')} </label>
                     <input
                         type="date"
                         name="fechaDeposito"
@@ -316,7 +373,7 @@ export const Fase03 = ({ onSubmit, botonEnviarRef }) => {
                     />
                 </section>
                 <section className="containerRowForm">
-                    <label>Número de transferencia </label>
+                    <label> {t('notPago.numTransferencia')} </label>
                     <input
                         type="text"
                         name="numTransferencia"
@@ -338,6 +395,9 @@ export const Fase03 = ({ onSubmit, botonEnviarRef }) => {
 };
 
 export const Fase04 = ({ onSubmit, botonEnviarRef, user }) => {
+    
+    const { t, i18n } = useTranslation();
+
     const [formulario, setFormulario] = useState({});
 
     const manejadorSubmit = (evento) => {
@@ -373,6 +433,7 @@ export const Fase04 = ({ onSubmit, botonEnviarRef, user }) => {
                 onSubmit({
                     proceso: 4,
                     formularioCompletado: true,
+                    data:formulario,
                 })
             );
 
@@ -409,6 +470,7 @@ export const Fase04 = ({ onSubmit, botonEnviarRef, user }) => {
                 onSubmit({
                     proceso: 4,
                     formularioCompletado: true,
+                    data:formulario,
                 })
             );
 
@@ -427,14 +489,15 @@ export const Fase04 = ({ onSubmit, botonEnviarRef, user }) => {
             [name]: value,
         });
     };
-
+   
+ 
     return (
         <>
             {user === "user" ? (
                 <section className="containerFase01">
                     <form className="formFase03" onSubmit={manejadorSubmit}>
                         <section className="containerRowForm">
-                            <label> Nombre </label>
+                            <label>  {t("notPago.nombre")} </label>
                             <input
                                 type="text"
                                 name="nombre"
@@ -444,7 +507,7 @@ export const Fase04 = ({ onSubmit, botonEnviarRef, user }) => {
                             />
                         </section>
                         <section className="containerRowForm">
-                            <label>Apellido </label>
+                            <label>{t("notPago.apellido")} </label>
                             <input
                                 type="text"
                                 name="apellido"
@@ -454,7 +517,7 @@ export const Fase04 = ({ onSubmit, botonEnviarRef, user }) => {
                             />
                         </section>
                         <section className="containerRowForm">
-                            <label>Cedula, DNI Pasaporte </label>
+                            <label>{t("notPago.cedula")} </label>
                             <input
                                 type="text"
                                 name="cedula"
@@ -464,7 +527,7 @@ export const Fase04 = ({ onSubmit, botonEnviarRef, user }) => {
                             />
                         </section>
                         <section className="containerRowForm">
-                            <label>País de Procedencia</label>
+                            <label> {t("notPago.paisProcedencia")}</label>
                             <input
                                 type="text"
                                 name="paisProcedencia"
@@ -474,7 +537,7 @@ export const Fase04 = ({ onSubmit, botonEnviarRef, user }) => {
                             />
                         </section>
                         <section className="containerRowForm">
-                            <label> Codigo de Cliente </label>
+                            <label> {t("notPago.codigoCliente")} </label>
                             <input
                                 type="text"
                                 name="codigoCliente"
@@ -484,7 +547,7 @@ export const Fase04 = ({ onSubmit, botonEnviarRef, user }) => {
                             />
                         </section>
                         <section className="containerRowForm">
-                            <label>Correo Electronico </label>
+                            <label>{t("notPago.correo")}</label>
                             <input
                                 type="text"
                                 name="correo"
@@ -494,7 +557,7 @@ export const Fase04 = ({ onSubmit, botonEnviarRef, user }) => {
                             />
                         </section>
                         <section className="containerRowForm">
-                            <label> Telefono</label>
+                            <label> {t("notPago.telefono")}</label>
                             <input
                                 type="text"
                                 name="telefono"
@@ -513,10 +576,11 @@ export const Fase04 = ({ onSubmit, botonEnviarRef, user }) => {
                     </form>
                 </section>
             ) : (
+
                 <section className="containerFase01">
                     <form className="formFase03" onSubmit={manejadorSubmit}>
                         <section className="containerRowForm">
-                            <label> Nombre de la empresa </label>
+                            <label> {t("notPago.nombreEmpresa")} </label>
                             <input
                                 type="text"
                                 name="nombreEmpresa"
@@ -526,7 +590,7 @@ export const Fase04 = ({ onSubmit, botonEnviarRef, user }) => {
                             />
                         </section>
                         <section className="containerRowForm">
-                            <label>Razón social /RIF </label>
+                            <label>{t("notPago.rif")} </label>
                             <input
                                 type="text"
                                 name="rif"
@@ -536,7 +600,7 @@ export const Fase04 = ({ onSubmit, botonEnviarRef, user }) => {
                             />
                         </section>
                         <section className="containerRowForm">
-                            <label>País de procedencia</label>
+                            <label> {t("notPago.paisProcedenciaEmpresa")}</label>
                             <input
                                 type="text"
                                 name="paisProcedenciaEmpresa"
@@ -546,7 +610,7 @@ export const Fase04 = ({ onSubmit, botonEnviarRef, user }) => {
                             />
                         </section>
                         <section className="containerRowForm">
-                            <label>Ciudad</label>
+                            <label>{t("notPago.ciudad")}</label>
                             <input
                                 type="text"
                                 name="ciudad"
@@ -556,7 +620,7 @@ export const Fase04 = ({ onSubmit, botonEnviarRef, user }) => {
                             />
                         </section>
                         <section className="containerRowForm">
-                            <label>Dirección </label>
+                            <label> {t("notPago.direccion")} </label>
                             <input
                                 type="textArea"
                                 name="direccion"
@@ -567,10 +631,10 @@ export const Fase04 = ({ onSubmit, botonEnviarRef, user }) => {
                         </section>
 
                         <section className="containerText">
-                            <p>Datos del representante de la empresa</p>
+                            <p>{t("notPago.datosRepresentante")} </p>
                         </section>
                         <section className="containerRowForm">
-                            <label> Nombre y Apellido</label>
+                            <label>  {t("notPago.nombreApellido")}</label>
                             <input
                                 type="date"
                                 name="nombreApellido"
@@ -580,7 +644,7 @@ export const Fase04 = ({ onSubmit, botonEnviarRef, user }) => {
                             />
                         </section>
                         <section className="containerRowForm">
-                            <label>Correo electrónico </label>
+                            <label> {t("notPago.correoEmpresa")} </label>
                             <input
                                 type="text"
                                 name="correoEmpresa"
@@ -590,7 +654,7 @@ export const Fase04 = ({ onSubmit, botonEnviarRef, user }) => {
                             />
                         </section>
                         <section className="containerRowForm">
-                            <label> Telefono</label>
+                            <label>  {t("notPago.telefono")}</label>
                             <input
                                 type="text"
                                 name="telefono"
@@ -614,6 +678,9 @@ export const Fase04 = ({ onSubmit, botonEnviarRef, user }) => {
 };
 
 export const Fase05 = ({ onSubmit, botonEnviarRef }) => {
+    
+    const { t, i18n } = useTranslation();
+
     const [formulario, setFormulario] = useState({});
 
     const manejadorSubmit = (evento) => {
@@ -654,6 +721,7 @@ export const Fase05 = ({ onSubmit, botonEnviarRef }) => {
             onSubmit({
                 proceso: 5,
                 formularioCompletado: true,
+                data:formulario,
             })
         );
         return;
@@ -672,7 +740,7 @@ export const Fase05 = ({ onSubmit, botonEnviarRef }) => {
         <section className="containerFase01">
             <form className="formFase03" onSubmit={manejadorSubmit}>
                 <section className="containerRowForm">
-                    <label> Pais </label>
+                    <label> {t("notPago.pais")} </label>
                     <input
                         type="text"
                         name="pais"
@@ -682,7 +750,7 @@ export const Fase05 = ({ onSubmit, botonEnviarRef }) => {
                     />
                 </section>
                 <section className="containerRowForm">
-                    <label>estado </label>
+                    <label>{t("notPago.estado")} </label>
                     <input
                         type="text"
                         name="estado"
@@ -692,7 +760,7 @@ export const Fase05 = ({ onSubmit, botonEnviarRef }) => {
                     />
                 </section>
                 <section className="containerRowForm">
-                    <label>Ciudad</label>
+                    <label>{t("notPago.ciudad")}</label>
                     <input
                         type="text"
                         name="ciudad"
@@ -702,7 +770,7 @@ export const Fase05 = ({ onSubmit, botonEnviarRef }) => {
                     />
                 </section>
                 <section className="containerRowForm">
-                    <label>zona</label>
+                    <label>{t("notPago.zona")}</label>
                     <input
                         type="text"
                         name="zona"
@@ -711,8 +779,9 @@ export const Fase05 = ({ onSubmit, botonEnviarRef }) => {
                         required
                     />
                 </section>
+        
                 <section className="containerRowForm">
-                    <label>Descripcion </label>
+                    <label>{t("notPago.descripcion")} </label>
                     <input
                         type="text"
                         name="descripcion"
@@ -723,7 +792,7 @@ export const Fase05 = ({ onSubmit, botonEnviarRef }) => {
                 </section>
                 <section className="containerCol">
                     <section className="containerRowForm">
-                        <label>Fecha Publicacion </label>
+                        <label>{t("notPago.fechaPublicacion")}</label>
                         <input
                             type="date"
                             name="fechaPublicacion"
@@ -734,7 +803,7 @@ export const Fase05 = ({ onSubmit, botonEnviarRef }) => {
                     </section>
 
                     <section className="containerRowForm">
-                        <label>Fecha Vencimiento </label>
+                        <label>{t("notPago.fechaVencimiento")} </label>
                         <input
                             type="date"
                             name="fechaVencimiento"
@@ -746,7 +815,7 @@ export const Fase05 = ({ onSubmit, botonEnviarRef }) => {
                 </section>
                 <section className="containerCol">
                     <section className="containerRowForm">
-                        <label>Tipo Operacion </label>
+                        <label>{t("notPago.tipoOperacion")} </label>
                         <input
                             type="text"
                             name="tipoOperacion"
@@ -756,7 +825,7 @@ export const Fase05 = ({ onSubmit, botonEnviarRef }) => {
                         />
                     </section>
                     <section className="containerRowForm">
-                        <label>Idioma Publicacion </label>
+                        <label>{t("notPago.idiomaPublicacion")} </label>
                         <input
                             type="text"
                             name="idiomaPublicacion"
@@ -768,7 +837,7 @@ export const Fase05 = ({ onSubmit, botonEnviarRef }) => {
 
                 </section>
                 <section className="containerRowForm">
-                    <label> Precio </label>
+                    <label> {t("notPago.precio")} </label>
                     <input
                         type="text"
                         name="precio"
@@ -790,12 +859,18 @@ export const Fase05 = ({ onSubmit, botonEnviarRef }) => {
 };
 
 export const Fase06 = () => {
+    
+    const { t, i18n } = useTranslation();
+
     return(<>
         fase06
     </>)
 };
 
 export const NotificarPago = () => {
+
+    const { t, i18n } = useTranslation();
+
     const [selectItem, setSelectItem] = useState({});
     const [opciones, setOpciones] = useState(arrayFases);
     const [proceso, setProceso] = useState(1);
@@ -811,7 +886,11 @@ export const NotificarPago = () => {
         console.log("formulario ###########", formulario);
 
         if (formulario) {
-            const { proceso, formularioCompletado } = formulario;
+            const { proceso, formularioCompletado, data } = formulario;
+
+            if(proceso ===3) setInfFase03(data);
+            if(proceso ===4) setInfFase04(data);
+            if(proceso ===5) setInfFase05(data);
 
             if (formularioCompletado) {
                 const newArray = opciones.map((item) => {

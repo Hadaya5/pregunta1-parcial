@@ -1,5 +1,6 @@
 import React from 'react';
-import logo from '../assets/logo.png'
+import logo from '../assets/logo.png';
+import { useTranslation } from 'react-i18next';  
 import '../styles/HeaderNotificarPago.scss';
 
 
@@ -11,6 +12,8 @@ export const HeaderNotificarPago = ({
     selectItem,
 }) => {
 
+    const { t, i18n } = useTranslation();
+
     return (
         <section className='containerHPrincipalNP'>
             <section className='containerHeaderNP'>
@@ -20,7 +23,7 @@ export const HeaderNotificarPago = ({
                 />
                 <p>Vivienda xx</p>
                 <section>
-                    <p> Notifiar Pago</p>
+                    <p>  {t('notPago.notificarPago')}</p>
                 </section>
             </section>
                 {
@@ -31,7 +34,7 @@ export const HeaderNotificarPago = ({
                                 arrayFases.map((item, index) => (
                                     <section key={`fase-000-${index}`} className={item?.activo ? 'containerBottonNPActivo' :'containerBottonNPInactivo' }>
                                     <p>
-                                            {item?.label}
+                                        {t(item?.label)}
                                     </p>
                                     </section>
                                 ))
@@ -46,11 +49,11 @@ export const HeaderNotificarPago = ({
                                 <button 
                                     className='bottonOpcionNP'
                                     onClick={() => funcionAtras()}
-                                    >Atras
+                                    >{t('notPago.atras')}
                                 </button>
                             }
                             <section className='containerMedioNP'>
-                                <p> {selectItem?.texto}</p>
+                                <p> {t(selectItem?.texto)}</p>
                             </section>
                             { 
                                 proceso === 6 ?
@@ -60,7 +63,7 @@ export const HeaderNotificarPago = ({
                                     className='bottonOpcionNP' 
                                     onClick={() => funcionContinuar()}
                                     >
-                                        Continuar
+                                        {t('notPago.continuar')}
                                     </button>
 
                             }

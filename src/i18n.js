@@ -4,19 +4,23 @@ import LanguageDetector from 'i18next-browser-languagedetector';
 import login_en from "./locales/en/IniciarSesion.json"
 import login_es from "./locales/es/IniciarSesion.json"
 import opcionesNav_es from './locales/es/nav.json';
-//import opcionesNav_en from './locales/en/nav.json';;
-
+import opcionesNav_en from './locales/en/nav.json';
+import notificarPago_es from './locales/es/NotificarPago.json';
+import notificarPago_en from './locales/en/NotificarPago.json';
 
 
 const en = Object.assign(
     {},
-    login_en
+    login_en,
+    opcionesNav_en,
+    notificarPago_en,
 );
 
 const es = Object.assign(
     {},
     login_es,
-    opcionesNav_es
+    opcionesNav_es,
+    notificarPago_es,
 );
 
 
