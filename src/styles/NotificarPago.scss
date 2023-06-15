@@ -69,4 +69,225 @@
 
 input:focus{
     outline: none;
-  }
+}
+
+.containerFase06{
+    width: 100%;
+    min-height: 100%;
+
+    header{
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        justify-content: center;
+        align-items: center;
+
+        h2{
+            width: 70%;
+            justify-self: end;
+            text-align: center;
+            font-size: 3rem;
+        }
+
+        span{
+            font-size: 2rem;
+        }
+    }
+
+    article{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .bill-actions{
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.rif-data{
+    text-transform: uppercase;
+}
+
+.bussiness-data{
+    width: 80%;
+    margin-bottom: 1rem;
+}
+
+.bill-info{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 70%;
+    margin-right: 30%;
+    margin-bottom: 1rem;
+
+    .table-emit-data{
+        display: grid;
+        grid-template-columns: 3fr 1fr 1fr 1fr;
+
+        div{
+            padding: 5px;
+            // border: 2px solid gray;
+            border-width: 3px 0px 3px 3px;
+            border-style: solid;
+            border-color: gray;
+        }
+
+        :nth-child(1),
+        :nth-child(5){
+            border-radius: 5px 0px 0px 5px;
+        }
+        
+        :nth-child(4),
+        :nth-child(8){
+            border-radius: 0px 5px 5px 0px;
+            border-width: 3px;
+        }
+
+        [class^=label],
+        .title {
+            margin-bottom: 1px;
+        }
+    }
+
+    .bill-data{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+}
+
+.bill-tables{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    margin-bottom: 1rem;
+    grid-template-areas: "user-data home-data" "deposit-data blank";
+
+    [class^=table-]{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: "title title";
+        // width: 90%;
+        width: 80%;
+        justify-self: center;
+        margin-bottom: 1rem;
+        
+        div{
+            border-style: solid;
+            border-color: yellow;
+            padding: 2px 5px;
+        }
+        :nth-child(odd){
+            border-width: 0px 2px 2px 2px;
+            // border-style: solid;
+            // border-color: yellow;
+        }
+
+        :nth-child(even){
+            border-width: 0px 0px 2px 2px;
+            // border-style: solid;
+            // border-color: yellow;
+        }
+
+        .title{
+            border-width: 2px 2px 2px 2px;
+            grid-area: title;
+            text-align: center;
+            color: blue;
+            font-weight: bold;
+        }
+
+        [class^=label-]{
+            font-weight: bold;
+        }
+    }
+
+    .table-user_data{
+        grid-area: user-data;
+    }
+
+    .table-deposit_data{
+        grid-area: deposit-data;
+    }
+
+    .table-home_data{
+        grid-area: home-data;
+    }
+}
+
+
+
+
+.bill-tables02{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    margin-bottom: 1rem;
+    grid-template-areas: "empresa_data home-data" "userEmpresa_data deposit-data";
+
+    [class^=table-]{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: "title title";
+        // width: 90%;
+        width: 80%;
+        justify-self: center;
+        margin-bottom: 1rem;
+        
+        div{
+            border-style: solid;
+            border-color: yellow;
+            padding: 2px 5px;
+        }
+        :nth-child(odd){
+            border-width: 0px 2px 2px 2px;
+            // border-style: solid;
+            // border-color: yellow;
+        }
+
+        :nth-child(even){
+            border-width: 0px 0px 2px 2px;
+            // border-style: solid;
+            // border-color: yellow;
+        }
+
+        .title{
+            border-width: 2px 2px 2px 2px;
+            grid-area: title;
+            text-align: center;
+            color: blue;
+            font-weight: bold;
+        }
+
+        [class^=label-]{
+            font-weight: bold;
+        }
+    }
+
+    .table-user_data{
+        grid-area: user-data;
+    }
+
+    .table-deposit_data{
+        grid-area: deposit-data;
+    }
+
+    .table-home_data{
+        grid-area: home-data;
+    }
+}
+.bill-actions{
+    button{
+        border-style: solid;
+        border-color: orange;
+        border-radius: 5px;
+        padding: .5rem 1.5rem;
+        background-color: orange;
+        color: white;
+        font-weight: bold;
+    }
+}

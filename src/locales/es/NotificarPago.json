@@ -56,7 +56,23 @@
         "fechaPublicacion":"Fecha Publicacion",
         "fechaVencimiento":"Fecha Vencimiento",
         "idiomaPublicacion":"Idioma Publicacion",
-        "precio":"Precio"
+        "precio":"Precio",
+
+        "dataFase02":"Av intercomunal Guarenas- Guatire. Urb Nueva Casarapa. <br /> Conj Resd. El Alambique 9B, piso 1, apto 9B-24. Guarenas - Estado Miranda <br /> Zona postal 1220. Telf: 0414-389-74-44",
+        "fechaEmision": "Fecha de emision",
+        "dia": "Día",
+        "mes": "Mes",
+        "anio": "Año",
+        
+        "en": "En",
+        "factura": "Factura",
+        "numControl": "Nro de control",
+        "dni":"Cedula de identidad, DNI o pasaporte",
+        "datosTransferenciaDeposito": "Datos de la transferencia o deposito",
+        "paisBancoOrigen": "Pais donde reside la cuenta del banco origen",
+        "fechaHizoDeposito": "Fecha en que se hizo el deposito",
+        "numeroTransferencia": "Numero de transferencia"
+    
     }
 
 

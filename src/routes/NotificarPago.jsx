@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import { HeaderNotificarPago } from "../components/HeaderNotificarPago";
-import { useTranslation } from 'react-i18next';  
+import { useTranslation } from "react-i18next";
 import "../styles/NotificarPago.scss";
 
 // const arrayFases = [
@@ -49,7 +49,6 @@ import "../styles/NotificarPago.scss";
 //     },
 // ];
 
-
 const arrayFases = [
     {
         label: "notPago.cantDeposito",
@@ -66,11 +65,11 @@ const arrayFases = [
         texto: "notPago.tipoOperacionTexto",
     },
     {
-        label:  "notPago.datoTransferencia",
+        label: "notPago.datoTransferencia",
         activo: false,
         validacion: false,
         opcion: 3,
-        texto:  "notPago.datoTransferenciaTexto",
+        texto: "notPago.datoTransferenciaTexto",
     },
     {
         label: "notPago.datoUsuario",
@@ -104,7 +103,7 @@ export const Fase01 = ({
 }) => {
     const proceso = 2;
     const [selectedOption, setSelectedOption] = useState("");
-    
+
     const { t, i18n } = useTranslation();
 
     const handleChange = (event) => {
@@ -163,7 +162,7 @@ export const Fase01 = ({
                 value={selectedOption}
                 onChange={handleChange}
             >
-                <option value="">{t('notPago.seleccionarNumero')}</option>
+                <option value="">{t("notPago.seleccionarNumero")}</option>
                 {[...Array(10)].map((x, i) => (
                     <option key={i + 1} value={i + 1}>
                         {i + 1}
@@ -181,7 +180,7 @@ export const Fase02 = ({
     setOpciones,
 }) => {
     const proceso = 2;
-    
+
     const { t, i18n } = useTranslation();
 
     const [selectedOption, setSelectedOption] = useState("");
@@ -222,7 +221,6 @@ export const Fase02 = ({
                 setSelectItem({
                     ...item,
                     validacion: false,
-               
                 });
                 return {
                     ...item,
@@ -244,10 +242,13 @@ export const Fase02 = ({
                 value={selectedOption}
                 onChange={handleChange}
             >
-                <option value="">{t('notPago.seleccionarForma')}</option>
+                <option value="">{t("notPago.seleccionarForma")}</option>
                 {[
-                    { label: `${t('notPago.deposito')}`, value: "deposito" },
-                    { label: `${t('notPago.transferencia')}`, value: "transferencia" },
+                    { label: `${t("notPago.deposito")}`, value: "deposito" },
+                    {
+                        label: `${t("notPago.transferencia")}`,
+                        value: "transferencia",
+                    },
                 ].map((x, i) => (
                     <option key={i + 1} value={x?.value}>
                         {x?.label}
@@ -294,7 +295,7 @@ export const Fase03 = ({ onSubmit, botonEnviarRef }) => {
             onSubmit({
                 proceso: 3,
                 formularioCompletado: true,
-                data:formulario,
+                data: formulario,
             })
         );
         return;
@@ -308,12 +309,11 @@ export const Fase03 = ({ onSubmit, botonEnviarRef }) => {
         });
     };
 
-
     return (
         <section className="containerFase01">
             <form className="formFase03" onSubmit={manejadorSubmit}>
                 <section className="containerRowForm">
-                    <label>  {t( 'notPago.monto')}</label>
+                    <label> {t("notPago.monto")}</label>
                     <input
                         type="text"
                         name="monto"
@@ -323,7 +323,7 @@ export const Fase03 = ({ onSubmit, botonEnviarRef }) => {
                     />
                 </section>
                 <section className="containerRowForm">
-                    <label>  {t( 'notPago.moneda')}</label>
+                    <label> {t("notPago.moneda")}</label>
                     <input
                         type="text"
                         name="moneda"
@@ -333,7 +333,7 @@ export const Fase03 = ({ onSubmit, botonEnviarRef }) => {
                     />
                 </section>
                 <section className="containerRowForm">
-                    <label> {t( 'notPago.bancoOrigen')}</label>
+                    <label> {t("notPago.bancoOrigen")}</label>
                     <input
                         type="text"
                         name="bancoOrigen"
@@ -343,7 +343,7 @@ export const Fase03 = ({ onSubmit, botonEnviarRef }) => {
                     />
                 </section>
                 <section className="containerRowForm">
-                    <label>{t( 'notPago.paisCuentaBancoOrigen')}</label>
+                    <label>{t("notPago.paisCuentaBancoOrigen")}</label>
                     <input
                         type="text"
                         name="paisCuentaBancoOrigen"
@@ -353,7 +353,7 @@ export const Fase03 = ({ onSubmit, botonEnviarRef }) => {
                     />
                 </section>
                 <section className="containerRowForm">
-                    <label>{t( 'notPago.bancoDestino')}</label>
+                    <label>{t("notPago.bancoDestino")}</label>
                     <input
                         type="text"
                         name="bancoDestino"
@@ -363,7 +363,7 @@ export const Fase03 = ({ onSubmit, botonEnviarRef }) => {
                     />
                 </section>
                 <section className="containerRowForm">
-                    <label>{t( 'notPago.fechaDeposito')} </label>
+                    <label>{t("notPago.fechaDeposito")} </label>
                     <input
                         type="date"
                         name="fechaDeposito"
@@ -373,7 +373,7 @@ export const Fase03 = ({ onSubmit, botonEnviarRef }) => {
                     />
                 </section>
                 <section className="containerRowForm">
-                    <label> {t('notPago.numTransferencia')} </label>
+                    <label> {t("notPago.numTransferencia")} </label>
                     <input
                         type="text"
                         name="numTransferencia"
@@ -395,7 +395,6 @@ export const Fase03 = ({ onSubmit, botonEnviarRef }) => {
 };
 
 export const Fase04 = ({ onSubmit, botonEnviarRef, user }) => {
-    
     const { t, i18n } = useTranslation();
 
     const [formulario, setFormulario] = useState({});
@@ -433,7 +432,7 @@ export const Fase04 = ({ onSubmit, botonEnviarRef, user }) => {
                 onSubmit({
                     proceso: 4,
                     formularioCompletado: true,
-                    data:formulario,
+                    data: formulario,
                 })
             );
 
@@ -470,7 +469,7 @@ export const Fase04 = ({ onSubmit, botonEnviarRef, user }) => {
                 onSubmit({
                     proceso: 4,
                     formularioCompletado: true,
-                    data:formulario,
+                    data: formulario,
                 })
             );
 
@@ -489,15 +488,14 @@ export const Fase04 = ({ onSubmit, botonEnviarRef, user }) => {
             [name]: value,
         });
     };
-   
- 
+
     return (
         <>
             {user === "user" ? (
                 <section className="containerFase01">
                     <form className="formFase03" onSubmit={manejadorSubmit}>
                         <section className="containerRowForm">
-                            <label>  {t("notPago.nombre")} </label>
+                            <label> {t("notPago.nombre")} </label>
                             <input
                                 type="text"
                                 name="nombre"
@@ -576,7 +574,6 @@ export const Fase04 = ({ onSubmit, botonEnviarRef, user }) => {
                     </form>
                 </section>
             ) : (
-
                 <section className="containerFase01">
                     <form className="formFase03" onSubmit={manejadorSubmit}>
                         <section className="containerRowForm">
@@ -600,7 +597,10 @@ export const Fase04 = ({ onSubmit, botonEnviarRef, user }) => {
                             />
                         </section>
                         <section className="containerRowForm">
-                            <label> {t("notPago.paisProcedenciaEmpresa")}</label>
+                            <label>
+                                {" "}
+                                {t("notPago.paisProcedenciaEmpresa")}
+                            </label>
                             <input
                                 type="text"
                                 name="paisProcedenciaEmpresa"
@@ -634,7 +634,7 @@ export const Fase04 = ({ onSubmit, botonEnviarRef, user }) => {
                             <p>{t("notPago.datosRepresentante")} </p>
                         </section>
                         <section className="containerRowForm">
-                            <label>  {t("notPago.nombreApellido")}</label>
+                            <label> {t("notPago.nombreApellido")}</label>
                             <input
                                 type="date"
                                 name="nombreApellido"
@@ -654,7 +654,7 @@ export const Fase04 = ({ onSubmit, botonEnviarRef, user }) => {
                             />
                         </section>
                         <section className="containerRowForm">
-                            <label>  {t("notPago.telefono")}</label>
+                            <label> {t("notPago.telefono")}</label>
                             <input
                                 type="text"
                                 name="telefono"
@@ -678,7 +678,6 @@ export const Fase04 = ({ onSubmit, botonEnviarRef, user }) => {
 };
 
 export const Fase05 = ({ onSubmit, botonEnviarRef }) => {
-    
     const { t, i18n } = useTranslation();
 
     const [formulario, setFormulario] = useState({});
@@ -721,7 +720,7 @@ export const Fase05 = ({ onSubmit, botonEnviarRef }) => {
             onSubmit({
                 proceso: 5,
                 formularioCompletado: true,
-                data:formulario,
+                data: formulario,
             })
         );
         return;
@@ -779,7 +778,7 @@ export const Fase05 = ({ onSubmit, botonEnviarRef }) => {
                         required
                     />
                 </section>
-        
+
                 <section className="containerRowForm">
                     <label>{t("notPago.descripcion")} </label>
                     <input
@@ -834,7 +833,6 @@ export const Fase05 = ({ onSubmit, botonEnviarRef }) => {
                             required
                         />
                     </section>
-
                 </section>
                 <section className="containerRowForm">
                     <label> {t("notPago.precio")} </label>
@@ -858,39 +856,555 @@ export const Fase05 = ({ onSubmit, botonEnviarRef }) => {
     );
 };
 
-export const Fase06 = () => {
-    
+export const Fase06 = ({ fase03, fase04, fase05, user }) => {
     const { t, i18n } = useTranslation();
+    const now = new Date();
 
-    return(<>
-        fase06
-    </>)
+    console.log("#".repeat(50));
+    console.log({ fase03, fase04, fase05 });
+    console.log("#".repeat(50));
+
+    return (
+        <>
+            {user === "user" ? (
+                <section className="containerFase06">
+                    <header>
+                        <h2>TuVivienda.com C.A</h2>
+                        <span className="rif-data">
+                            {t("notPago.rif")}: {new Date().getMilliseconds()}
+                        </span>
+                    </header>
+
+                    <article>
+                        <span className="bussiness-data">
+                            {t("notPago.dataFase02")}
+                        </span>
+
+                        <div className="bill-info">
+                            <div className="table-emit-data">
+                                <div className="title">
+                                    {t("notPago.fechaEmision")}
+                                </div>
+
+                                <div className="label-day">
+                                    {t("notPago.dia")}
+                                </div>
+                                <div className="label-month">
+                                    {t("notPago.mes")}
+                                </div>
+                                <div className="label-year">
+                                    {t("notPago.anio")}
+                                </div>
+
+                                <div className="country">
+                                    {t("notPago.en")}: Venezuela
+                                </div>
+                                <div className="value-day">
+                                    {now.getDate() < 10
+                                        ? `0${now.getDate()}`
+                                        : now.getDate()}
+                                </div>
+                                <div className="value-month">
+                                    {now.getMonth() < 10
+                                        ? `0${now.getMonth()}`
+                                        : now.getMonth()}
+                                </div>
+                                <div className="value-year">
+                                    {now.getFullYear()}
+                                </div>
+                            </div>
+
+                            <div className="bill-data">
+                                <span>
+                                    {t("notPago.factura")}: 000-{" "}
+                                    {Math.floor(Math.random() * 100) + 1}
+                                </span>
+                                <span>
+                                    {t("notPago.numControl")}: 000-
+                                    {Math.floor(Math.random() * 100) + 1}
+                                </span>
+                            </div>
+                        </div>
+
+                        <div className="bill-tables">
+                            <div className="table-user_data">
+                                <div className="title">
+                                    {t("notPago.datoUsuario")}
+                                </div>
+
+                                <div className="label-name">
+                                    {t("notPago.nombre")}
+                                </div>
+                                <div className="value-name">
+                                    {fase04.nombre}
+                                </div>
+
+                                <div className="label-lastname">
+                                    {t("notPago.apellido")}
+                                </div>
+                                <div className="value-lastname">
+                                    {fase04.apellido}
+                                </div>
+
+                                <div className="label-ci">
+                                    {t("notPago.dni")}
+                                </div>
+                                <div className="value-ci">{fase04.cedula}</div>
+
+                                <div className="label-country">
+                                    {t("notPago.paisProcedencia")}
+                                </div>
+                                <div className="value-country">
+                                    {fase04.paisProcedencia}
+                                </div>
+
+                                <div className="label-client_code">
+                                    {t("notPago.codigoCliente")}
+                                </div>
+                                <div className="value-client_code">
+                                    {fase04.codigoCliente}
+                                </div>
+
+                                <div className="label-email">
+                                    {t("notPago.correo")}
+                                </div>
+                                <div className="value-email">
+                                    {fase04.correo}
+                                </div>
+
+                                <div className="label-phoneNumber">
+                                    {t("notPago.telefono")}
+                                </div>
+                                <div className="value-phoneNumber">
+                                    {fase04.telefono}
+                                </div>
+                            </div>
+
+                            <div className="table-deposit_data">
+                                <div className="title">
+                                    {t("notPago.datosTransferenciaDeposito")}
+                                </div>
+
+                                <div className="label-amount">
+                                    {t("notPago.monto")}
+                                </div>
+                                <div className="value-amount">
+                                    {fase03.monto} {fase03.moneda}
+                                </div>
+
+                                <div className="label-from_bank">
+                                    {t("notPago.bancoOrigen")}
+                                </div>
+                                <div className="value-from_bank">
+                                    {fase03.bancoOrigen}
+                                </div>
+
+                                <div className="label-country">
+                                    {t("notPago.paisBancoOrigen")}
+                                </div>
+                                <div className="value-country">
+                                    {fase03.paisCuentaBancoOrigen}
+                                </div>
+
+                                <div className="label-to_bank">
+                                    {t("notPago.bancoDestino")}
+                                </div>
+                                <div className="value-to_bank">
+                                    {fase03.bancoDestino}
+                                </div>
+
+                                <div className="label-transfered_at">
+                                    {t("notPago.fechaHizoDeposito")}
+                                </div>
+                                <div className="value-transfered_at">
+                                    {fase03.fechaDeposito}
+                                </div>
+
+                                <div className="label-transfer_reference">
+                                    {t("notPago.numeroTransferencia")}
+                                </div>
+                                <div className="value-transfer_reference">
+                                    {fase03.numTransferencia}
+                                </div>
+                            </div>
+
+                            <div className="table-home_data">
+                                <div className="title">
+                                    {t("notPago.datoAdiestramientoTexto")}
+                                </div>
+
+                                <div className="label-country">
+                                    {t("notPago.pais")}
+                                </div>
+                                <div className="value-country">
+                                    {fase05.pais}
+                                </div>
+
+                                <div className="label-state">
+                                    {t("notPago.estado")}
+                                </div>
+                                <div className="value-state">
+                                    {fase05.estado}
+                                </div>
+
+                                <div className="label-city">
+                                    {t("notPago.ciudad")}
+                                </div>
+                                <div className="value-city">
+                                    {fase05.ciudad}
+                                </div>
+
+                                <div className="label-zip_code">
+                                    {t("notPago.zona")}
+                                </div>
+                                <div className="value-zip_code">
+                                    {fase05.zona}
+                                </div>
+
+                                <div className="label-description">
+                                    {t("notPago.descripcion")}
+                                </div>
+                                <div className="value-description">
+                                    {fase05.descripcion}
+                                </div>
+
+                                <div className="label-published_at">
+                                    {t("notPago.fechaPublicacion")}
+                                </div>
+                                <div className="value-published_at">
+                                    {fase05.fechaPublicacion}
+                                </div>
+
+                                <div className="label-expire_at">
+                                    {t("notPago.fechaVencimiento")}
+                                </div>
+                                <div className="value-expire_at">
+                                    {fase05.fechaVencimiento}
+                                </div>
+
+                                <div className="label-type_transaction">
+                                    {t("notPago.tipoOperacion")}
+                                </div>
+                                <div className="value-type_transaction">
+                                    {fase05.tipoOperacion}
+                                </div>
+
+                                <div className="label-language_public">
+                                    {t("notPago.idiomaPublicacion")}
+                                </div>
+                                <div className="value-language_public">
+                                    {fase05.idiomaPublicacion}
+                                </div>
+
+                                <div className="label-price">
+                                    {t("notPago.precio")}
+                                </div>
+                                <div className="value-price">
+                                    {fase05.precio}
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <footer className="bill-actions">
+                        <button>{t("notPago.notificarPago")}</button>
+                    </footer>
+                </section>
+            ) : (
+                <section className="containerFase06">
+                    <header>
+                        <h2>TuVivienda.com C.A</h2>
+                        <span className="rif-data">
+                            {t("notPago.rif")}: {new Date().getMilliseconds()}
+                        </span>
+                    </header>
+
+                    <article>
+                        <span className="bussiness-data">
+                            {t("notPago.dataFase02")}
+                        </span>
+
+                        <div className="bill-info">
+                            <div className="table-emit-data">
+                                <div className="title">
+                                    {t("notPago.fechaEmision")}
+                                </div>
+
+                                <div className="label-day">
+                                    {t("notPago.dia")}
+                                </div>
+                                <div className="label-month">
+                                    {t("notPago.mes")}
+                                </div>
+                                <div className="label-year">
+                                    {t("notPago.anio")}
+                                </div>
+
+                                <div className="country">
+                                    {t("notPago.en")}: Venezuela
+                                </div>
+                                <div className="value-day">
+                                    {now.getDate() < 10
+                                        ? `0${now.getDate()}`
+                                        : now.getDate()}
+                                </div>
+                                <div className="value-month">
+                                    {now.getMonth() < 10
+                                        ? `0${now.getMonth()}`
+                                        : now.getMonth()}
+                                </div>
+                                <div className="value-year">
+                                    {now.getFullYear()}
+                                </div>
+                            </div>
+
+                            <div className="bill-data">
+                                <span>
+                                    {t("notPago.factura")}: 000-{" "}
+                                    {Math.floor(Math.random() * 100) + 1}
+                                </span>
+                                <span>
+                                    {t("notPago.numControl")}: 000-
+                                    {Math.floor(Math.random() * 100) + 1}
+                                </span>
+                            </div>
+                        </div>
+
+                        <div className="bill-tables02">
+                    
+                            <div className="table-empresa_data">
+                                <div className="title">
+                                    {t("notPago.nombreEmpresa")}
+                                </div>
+
+                                <div className="label-name">
+                                    {t("notPago.nombreEmpresa")}
+                                </div>
+                                <div className="value-name">
+                                    {fase04.nombreEmpresa}
+                                </div>
+
+                                <div className="label-lastname">
+                                    {t("notPago.rif")}
+                                </div>
+                                <div className="value-lastname">
+                                    {fase04.rif}
+                                </div>
+
+                                <div className="label-ci">
+                                    {t("notPago.dni")}
+                                </div>
+                                <div className="value-ci">{fase04.paisProcedenciaEmpresa}</div>
+
+                                <div className="label-country">
+                                    {t("notPago.paisProcedencia")}
+                                </div>
+                                <div className="value-country">
+                                    {fase04.paisProcedenciaEmpresa}
+                                </div>
+
+                                <div className="label-client_code">
+                                    {t("notPago.ciudad")}
+                                </div>
+                                <div className="value-client_code">
+                                    {fase04.ciudad}
+                                </div>
+
+                                <div className="label-email">
+                                    {t("notPago.direccion")}
+                                </div>
+                                <div className="value-email">
+                                    {fase04.direccion}
+                                </div>
+                            </div>
+
+                            <div className="table-deposit_data">
+                                <div className="title">
+                                    {t("notPago.datosTransferenciaDeposito")}
+                                </div>
+
+                                <div className="label-amount">
+                                    {t("notPago.monto")}
+                                </div>
+                                <div className="value-amount">
+                                    {fase03.monto} {fase03.moneda}
+                                </div>
+
+                                <div className="label-from_bank">
+                                    {t("notPago.bancoOrigen")}
+                                </div>
+                                <div className="value-from_bank">
+                                    {fase03.bancoOrigen}
+                                </div>
+
+                                <div className="label-country">
+                                    {t("notPago.paisBancoOrigen")}
+                                </div>
+                                <div className="value-country">
+                                    {fase03.paisCuentaBancoOrigen}
+                                </div>
+
+                                <div className="label-to_bank">
+                                    {t("notPago.bancoDestino")}
+                                </div>
+                                <div className="value-to_bank">
+                                    {fase03.bancoDestino}
+                                </div>
+
+                                <div className="label-transfered_at">
+                                    {t("notPago.fechaHizoDeposito")}
+                                </div>
+                                <div className="value-transfered_at">
+                                    {fase03.fechaDeposito}
+                                </div>
+
+                                <div className="label-transfer_reference">
+                                    {t("notPago.numeroTransferencia")}
+                                </div>
+                                <div className="value-transfer_reference">
+                                    {fase03.numTransferencia}
+                                </div>
+                            </div>
+
+                            <div className="table-home_data">
+                                <div className="title">
+                                    {t("notPago.datoAdiestramientoTexto")}
+                                </div>
+
+                                <div className="label-country">
+                                    {t("notPago.pais")}
+                                </div>
+                                <div className="value-country">
+                                    {fase05.pais}
+                                </div>
+
+                                <div className="label-state">
+                                    {t("notPago.estado")}
+                                </div>
+                                <div className="value-state">
+                                    {fase05.estado}
+                                </div>
+
+                                <div className="label-city">
+                                    {t("notPago.ciudad")}
+                                </div>
+                                <div className="value-city">
+                                    {fase05.ciudad}
+                                </div>
+
+                                <div className="label-zip_code">
+                                    {t("notPago.zona")}
+                                </div>
+                                <div className="value-zip_code">
+                                    {fase05.zona}
+                                </div>
+
+                                <div className="label-description">
+                                    {t("notPago.descripcion")}
+                                </div>
+                                <div className="value-description">
+                                    {fase05.descripcion}
+                                </div>
+
+                                <div className="label-published_at">
+                                    {t("notPago.fechaPublicacion")}
+                                </div>
+                                <div className="value-published_at">
+                                    {fase05.fechaPublicacion}
+                                </div>
+
+                                <div className="label-expire_at">
+                                    {t("notPago.fechaVencimiento")}
+                                </div>
+                                <div className="value-expire_at">
+                                    {fase05.fechaVencimiento}
+                                </div>
+
+                                <div className="label-type_transaction">
+                                    {t("notPago.tipoOperacion")}
+                                </div>
+                                <div className="value-type_transaction">
+                                    {fase05.tipoOperacion}
+                                </div>
+
+                                <div className="label-language_public">
+                                    {t("notPago.idiomaPublicacion")}
+                                </div>
+                                <div className="value-language_public">
+                                    {fase05.idiomaPublicacion}
+                                </div>
+
+                                <div className="label-price">
+                                    {t("notPago.precio")}
+                                </div>
+                                <div className="value-price">
+                                    {fase05.precio}
+                                </div>
+                            </div>
+
+                            <div className="table-userEmpresa_data">
+                                <div className="title">
+                                    {t("notPago.datosRepresentante")}
+                                </div>
+
+                                <div className="label-country">
+                                    {t("notPago.nombreApellido")}
+                                </div>
+                                <div className="value-country">
+                                    {fase05.nombreApellido}
+                                </div>
+
+                                <div className="label-state">
+                                    {t("notPago.correo")}
+                                </div>
+                                <div className="value-state">
+                                    {fase05.correo}
+                                </div>
+
+                                <div className="label-city">
+                                    {t("notPago.telefono")}
+                                </div>
+                                <div className="value-city">
+                                    {fase05.telefono}
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </article>
+
+                    <footer className="bill-actions">
+                        <button>{t("notPago.notificarPago")}</button>
+                    </footer>
+                </section>
+            )}
+        </>
+    );
 };
 
 export const NotificarPago = () => {
-
     const { t, i18n } = useTranslation();
 
     const [selectItem, setSelectItem] = useState({});
     const [opciones, setOpciones] = useState(arrayFases);
-    const [proceso, setProceso] = useState(1);
-    const [infFase01,setInfFase01 ]= useState({});
-    const [infFase02,setInfFase02 ]= useState({});
-    const [infFase03,setInfFase03 ]= useState({});
-    const [infFase04,setInfFase04 ]= useState({});
-    const [infFase05,setInfFase05 ]= useState({});
+    const [proceso, setProceso] = useState(6);
+    const [infFase01, setInfFase01] = useState({});
+    const [infFase02, setInfFase02] = useState({});
+    const [infFase03, setInfFase03] = useState({});
+    const [infFase04, setInfFase04] = useState({});
+    const [infFase05, setInfFase05] = useState({});
 
     const botonEnviarRefFase = useRef();
-    
+
     const manejadorFormulario = (formulario) => {
         console.log("formulario ###########", formulario);
 
         if (formulario) {
             const { proceso, formularioCompletado, data } = formulario;
 
-            if(proceso ===3) setInfFase03(data);
-            if(proceso ===4) setInfFase04(data);
-            if(proceso ===5) setInfFase05(data);
+            if (proceso === 3) setInfFase03(data);
+            if (proceso === 4) setInfFase04(data);
+            if (proceso === 5) setInfFase05(data);
 
             if (formularioCompletado) {
                 const newArray = opciones.map((item) => {
@@ -974,7 +1488,9 @@ export const NotificarPago = () => {
     useEffect(() => {
         if (
             selectItem?.validacion &&
-            (selectItem.opcion === 3 || selectItem.opcion === 4 || selectItem.opcion === 5)
+            (selectItem.opcion === 3 ||
+                selectItem.opcion === 4 ||
+                selectItem.opcion === 5)
         ) {
             const newArray = opciones.map((item) => {
                 if (item.opcion === proceso + 1) {
@@ -1062,7 +1578,12 @@ export const NotificarPago = () => {
                         botonEnviarRef={botonEnviarRefFase}
                     />
                 ) : proceso === 6 ? (
-                    <Fase06 />
+                    <Fase06
+                        fase03={infFase03}
+                        fase04={infFase04}
+                        fase05={infFase05}
+                        user="user"
+                    />
                 ) : null}
             </>
         </div>

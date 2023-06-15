@@ -54,8 +54,20 @@
         "fechaPublicacion":"Publication Date",
         "fechaVencimiento":"Expiration Date",
         "idiomaPublicacion":"Publication Language",
-        "precio":"Price"
-
+        "precio":"Price",
+        "dataFase02":"Guarenas-Guatire intercommunal avenue. Urb Nueva Casarapa. <br /> Set Resd. El Alembic 9B, 1st floor, apartment 9B-24. Guarenas - Miranda State <br /> Postal zone 1220. Phone: 0414-389-74-44",
         
+        "fechaEmision": "Date of issue",
+        "dia": "Day",
+        "mes": "Month",
+        "anio": "Year",
+        "en": "Made",
+        "factura": "Bill",
+        "numControl": "Control Num",
+        "dni":"Card Identification, DNI, passport",
+        "datosTransferenciaDeposito": "Transfer or deposit information",
+        "paisBancoOrigen": "Country where the account of the originating bank resides",
+        "fechaHizoDeposito": "Date deposit was made",
+        "numeroTransferencia": "Transfer number"
     }
 }

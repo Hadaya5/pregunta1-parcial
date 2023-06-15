@@ -21,8 +21,8 @@ export const HeaderNotificarPago = ({
                     src={logo}
                     style={{width:'4em'}}
                 />
-                <p>Vivienda xx</p>
-                <section>
+                <section className='containerTitulo'>
+                    <span>Vivienda xx</span>
                     <p>  {t('notPago.notificarPago')}</p>
                 </section>
             </section>
