@@ -1,0 +1,16 @@
+{
+    "Forma-pago":{
+        "vivienda":"Housing",
+        "ref":"Click here for information",
+        "forma-pago":"Payment methods",
+        "metodo-pago":"Bank Transfer or Deposit",
+        "mensaje":"The following are the payment methods associated with housing or any other company service:",
+        "deposito":"Deposit",
+        "transferencia":"Bank transfer",
+        "banco":"Bank",
+        "nro-cuenta":"Account number",
+        "codigo-swift":"SWIFT code",
+        "nombre-de":"Name of",
+        "correo":"Email"
+    }
+}

@@ -1,17 +1,86 @@
 @import 'colors';
 @import 'reactjs-popup/dist/index.css';
 
-#popup-1{
-    padding: 0;
-    border: 1px solid black;
+
+@for $i from 1 through 10 {
+    #popup-#{$i} {
+        padding: 0;
+        border: 1px solid black;
+    }
 }
-#popup-2{
-    padding: 0;
-    border: 1px solid black;
+
+.bold {
+    font-weight: bold;
 }
-#popup-3{
-    padding: 0;
-    border: 1px solid black;
+
+.link {
+    color: $azul-oscuro;
+    cursor: pointer;
+}
+
+.popup-content{
+    width: 70% !important;
+}
+
+#popup-container2 {
+    height: 90vh;
+
+    .header {
+        background-color: $azul-claro;
+        color: white;
+        font-size: 20px;
+        font-weight: bold;
+        padding: 0.7rem 0px;
+        text-align: center;
+    }
+
+    #popupTables {
+        display: flex;
+        justify-content: space-around;
+        margin: 0px 50px;
+    }
+
+    #centerTable {
+        display: flex;
+        justify-content: center;
+    }
+
+    table {
+        border: 3px solid $dorado;
+        border-collapse: collapse;
+    }
+
+
+    th {
+        color: $azul-oscuro
+    }
+
+    tr, td {
+        border: 3px solid $dorado;
+    }
+
+    #centerButton {
+        display: flex;
+        justify-content: center;
+
+        #boton-aceptar {
+            background-color: $dorado;
+            border-radius: 5px;
+            border: none;
+            padding: 6px 18px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 30px;
+        
+            &:hover {
+                background-color: darken($color: $dorado, $amount: 5)
+            }  
+        }
+    }
+
+
+
 }
 
 #popup-container {
@@ -106,13 +175,6 @@
             display: flex;
             justify-content: space-around;
             line-height: 0.6rem;
-
-            .subcolumna2 {
-                #link {
-                    color: $azul-oscuro;
-                    cursor: pointer;
-                }
-            }
         }
         .container2 {
             display: flex;

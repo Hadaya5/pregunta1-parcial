@@ -12,8 +12,11 @@ import "./App.css";
 import { useEffect, useState } from "react";
 import { Inicio } from "./routes/Inicio";
 import { AuthContextProvider } from "./context/AuthContext";
-import {NotificarPago} from './routes/NotificarPago';
-import {DatosContacto} from "./routes/DatosContacto";
+import { NotificarPago } from './routes/NotificarPago';
+import { Cotizaciones } from "./routes/Cotizaciones";
+import FormaPago from "./routes/FormaPago";
+
+
 import { Contacto } from "./routes/Contacto";
 
 function App() {
@@ -68,7 +71,7 @@ function App() {
                                 <Route
                                     exact
                                     path="/cotizaciones"
-                                    element={<> COTIZACINES</>}
+                                    element={<Cotizaciones/>}
                                 />
                                 <Route
                                     exact
@@ -84,7 +87,7 @@ function App() {
                                 <Route
                                     exact
                                     path="/forma-de-pago"
-                                    element={<> forma-de-pago</>}
+                                    element={<FormaPago/>}
                                 />
                                 <Route
                                     exact

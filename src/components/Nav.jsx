@@ -104,13 +104,10 @@ export const NavMenu = ({
     if ( authState.type == "CEO"){
         ITEM[1] = {
                 label: "nav.cotizacion",
-                path: "/cotizacion"
+                path: "/cotizaciones"
         }
         
     }
-
-    /*label: (() => ItemNav()) ? "nav.cotizacion" : "nav.monitoreo",
-        path: (() => ItemNav()) ? "/cotizaciones" : "/monitorear-publicacion",*/
 
     return(
         <section className='containerMenu'>

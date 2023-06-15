@@ -1,0 +1,16 @@
+{
+    "Forma-pago":{
+        "vivienda":"Vivienda",
+        "ref":"Haga clic aqui para ver información",
+        "forma-pago":"Formas de pago",
+        "metodo-pago":"Transferencia o Depósito bancario",
+        "mensaje":"A continuación, se proporciona las formas de pago asociadas a las viviendas o a cualquier otro servicio de la empresa:",
+        "deposito":"Depósito",
+        "transferencia":"Transferencia bancaria",
+        "banco":"Banco",
+        "nro-cuenta":"Nro de cuenta",
+        "codigo-swift":"Código SWIFT",
+        "nombre-de":"A nombre de",
+        "correo":"Email"
+    }
+}
