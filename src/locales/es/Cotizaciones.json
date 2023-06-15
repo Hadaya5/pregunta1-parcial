@@ -1,0 +1,16 @@
+{
+    "cotizacion": {
+        "pendientes": "Pendientes por recibir respuesta",
+        "misNotificaciones": "Mis notificaciones",
+        "botonProcesada": "Procesada",
+        "botonRechazada": "Rechazada",
+        "codigoCotizacion": "Código de la cotización",
+        "codigoCliente": "Código cliente",
+        "cliente-empresa": "Cliente/Empresa",
+        "fechaGenero": "Fecha en que se generó la cotización",
+        "fechaVencimiento": "Fecha de vencimiento",
+        "monto": "Monto",
+        "opciones": "Opciones",
+        "porDefinir": "Por definir"
+    }
+}
