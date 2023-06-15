@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { IniciarSesion } from './routes/IniciarSesion';
 import './App.css';
+import DatosContacto from './components/DatosContacto';
 
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
             <Route exact path="/login" element={<IniciarSesion />} />
           </Routes>
         </Router>
+        <DatosContacto/>
     </>
   );
 }
