@@ -81,7 +81,7 @@ const ITEM = [
         path: "/datos-contacto"
     },
     {
-        label: "Contacto",
+        label: "nav.contacto",
         path: "/contacto"
     },
     {

@@ -36,7 +36,7 @@ export const DatosContacto = () => {
   
     if (validador === true){
       if (selectedOption == 'Telefono Movil..'){
-        valor = 'Movil';
+        valor = t("contacto.telefonom");
         prueba = darFormatoNumero(nuevoDato);
       }else if (selectedOption == 'Telefono Fijo..'){
         valor = 'Fijo';
@@ -133,13 +133,13 @@ export const DatosContacto = () => {
         
      <div id='containerCEO'>  
     <div id='containerTables'>
-    <h1>Datos de Contacto</h1>
+    <h1>{t("contacto.datos")}</h1>
       <table>
         <thead>
           <tr>
-            <th>Tipo</th>
-            <th>Valor</th>
-            <th>Accion</th>
+            <th>{t("contacto.tipo")}</th>
+            <th>{t("contacto.valor")}</th>
+            <th>{t("contacto.accion")}</th>
           </tr>
         </thead>
       <tbody>
@@ -148,22 +148,21 @@ export const DatosContacto = () => {
               <td>{fila.columna1}</td>
               <td>{fila.columna2}</td>
               <td>
-                <button className='botonEliminar'  onClick={() => handleEliminar(index)}>Eliminar</button>
-                <button className='botonModificar' onClick={() => handleModificar(index)}>Modificar</button>
+                <button className='botonEliminar'  onClick={() => handleEliminar(index)}>{t("contacto.eliminar")}</button>
+                <button className='botonModificar' onClick={() => handleModificar(index)}>{t("contacto.modificar")}</button>
               </td>
             </tr>
           ))}
         </tbody>
     </table>
-            <h1>Agregar otros datos de Contacto</h1>
+            <h1>{t("contacto.agregar")}</h1>
       <select value={selectedOption} onChange={handleOptionChange} id='select'>
-        <option value="">Agregar Registro</option>
-        <option value="Telefono Movil..">Telefono Movil</option>
-        <option value="Telefono Fijo..">Telefono Fijo</option>
-        <option value="Email">Email</option>
+        <option value="">{t("contacto.agregarr")}</option>
+        <option value="Telefono Movil..">{t("contacto.telefonom")}</option>
+        <option value="Telefono Fijo..">{t("contacto.telefonof")}</option>
+        <option value="Email">{t("contacto.email")}</option>
       </select>
       
-
 
       <div className="input-container">
       {icono && <LogoM className="input-icon" />}
@@ -179,7 +178,7 @@ export const DatosContacto = () => {
           onClick={(e) =>  {setNuevoDato('')}}
         />
         </div>
-        <button className='botonActualizar' onClick={() => agregarFila()} disabled= {activado} >Actualizar</button> 
+        <button className='botonActualizar' onClick={() => agregarFila()} disabled= {activado} >{t("contacto.actualizar")}</button> 
       </div>
       </div>
     </section>
