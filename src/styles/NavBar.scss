@@ -1,0 +1,80 @@
+@import 'colors';
+
+#idioma{
+    background-color: transparent;
+    color: $blanco;
+    font-weight: bolder;
+    border: 0px;
+    option{
+        color: $negro
+    }
+}
+
+#idioma:focus {
+    outline: none;
+  }
+  
+.containerPrincipal {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 10%;
+    background-color: $azul-claro;
+}
+.containerLogo{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    gap:2em;
+    p{
+        margin: 0;
+        color: $blanco;
+        font-weight: bolder;
+    }
+}
+.containerPerfil{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    p{
+        margin: 0;
+        color: $blanco;
+        font-weight: bolder;
+    }
+}
+
+.containerMenu{
+    width: 20%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: $blanco;
+
+    &:first-child{
+        margin-top: 0.7em;
+    }
+}
+
+.opcionesMenu{
+    background-color: $azul-claro;
+    //margin: 0.3em 0em;
+    margin-top: 0.8em;
+    //margin: 1em 0em;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    p{
+        color: $blanco;
+        font-size: 1em;
+        color: $blanco;
+        font-weight: bolder;
+        padding-left: 10px;
+    }
+}

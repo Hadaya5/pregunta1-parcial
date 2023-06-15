@@ -1,0 +1,63 @@
+{
+    "notPago":{
+        "cantDeposito":"Cantidad de depósitos",
+        "cantDepositoTexto":"1- ¿Cuántos depósitos y/o transferencias tiene para notificar?",
+        "tipoOperacion":"Tipo de Operacion",
+        "tipoOperacionTexto":"Seleccione la forma en que fue cancelado el adiestramiento, o el servicio ofrecido",
+        "datoTransferencia":"Datos de la transferencia /depósito",
+        "datoTransferenciaTexto":"Datos de la transferencia/depósito",
+        "datoUsuario":"Datos de usuario",
+        "datoUsuarioTexto":"Datos del usuario",
+        "datoEmpresaTexto":"Datos de la empresa y su representante",
+        "datoAdiestramiento":"Datos del adiestramiento",
+        "datoAdiestramientoTexto":"Datos de la vivienda",
+        "datoRecibo": "Recibo",
+        "datoReciboTexto": "Verifique sus datos antes de continuar",
+        "notificarPago": "Notificar Pago",
+        "continuar":"Continuar",
+        "atras":"Atras",
+        
+        
+        "seleccionarNumero":"Seleccione un número",
+        "seleccionarForma":"Seleccione un Forma",
+        "deposito":"Deposito",
+        "transferencia":"Transferencia",
+
+
+        "monto": "Monto",
+        "bancoOrigen": "Banco de Origen",
+        "paisCuentaBancoOrigen": "Pais Cuenta Banco Origen",
+        "bancoDestino":"Banco Destino",
+        "fechaDeposito": "Fecha Deposito",
+        "numTransferencia": "Numero de Transferencia",
+        "moneda": "Moneda",
+
+        "nombre": "Nombre",
+        "apellido":"Apellido",
+        "cedula": "Cedula",
+        "paisProcedencia": "Pais Procedencia",
+        "codigoCliente": "Codigo de Cliente",
+        "correo": "Correo Electronico",
+        "telefono": "Telefono",
+
+        "correoEmpresa": "Correo Empresa",
+        "nombreApellido": "Nombre y Apellido",
+        "direccion": "Direccion",
+        "paisProcedenciaEmpresa": "Pais Procedencia Empresa",
+        "rif": "Rif",
+        "nombreEmpresa": "Nombre Empresa",
+        "datosRepresentante":"Datos del representante de la empresa",
+        "ciudad":"Ciudad",
+        "pais":"Paid",
+        "estado":"Estado",
+
+        "zona":"Zona",
+        "descripcion":"Descripcion",
+        "fechaPublicacion":"Fecha Publicacion",
+        "fechaVencimiento":"Fecha Vencimiento",
+        "idiomaPublicacion":"Idioma Publicacion",
+        "precio":"Precio"
+    }
+
+
+}

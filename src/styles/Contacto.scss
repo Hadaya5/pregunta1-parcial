@@ -1,0 +1,92 @@
+@import 'colors';
+
+#contacto{
+    width: 100%;
+    // background-color: red;
+
+    #header{
+        display: flex;
+        justify-content: center;
+        h2{
+            color: $dorado;
+            a{
+                font-size: medium;
+            }
+        }
+    }
+
+    .container{
+        border: solid;
+        margin-left: 5px;
+        margin-right: 5px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 1rem;
+        margin-bottom: 1rem;
+
+        .info{
+            .info-field{
+                span{
+                    font-weight: bold;
+                }
+                ul{
+                    margin-top: 0;
+                    list-style-type: none;
+                    padding: 0;
+                    padding-left: 1.25rem;
+
+                    .fa{
+                        font-weight: normal;
+                        background-color: $azul-oscuro;
+                        width: 25px;
+                        line-height: 25px;
+                        height: 25px;
+                        text-align: center;
+                        text-justify: center;
+                        border-radius: 25px;
+                        color: white;
+                        margin-top: 0.5rem;
+                    }
+                }
+            }
+
+            #link-container{
+                ul{
+                    list-style-type: disc;
+                }
+            }
+        }
+        .form-container{
+            .faq{
+                font-weight: bold;
+            }
+            form{
+                margin-top: 1rem;
+                border: solid;
+                width: 80%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                input{
+                    width: 90%;
+                    margin-bottom: 0.5rem;
+                    height: 1.25rem;
+                }
+                button{
+                    margin-bottom: 0.5rem;
+                    background-color: $azul-oscuro;
+                    border: none;
+                    padding: 2%;
+                    border-radius: 5px;
+                    color: white;
+                    font-weight: bold;
+                    &:hover{
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+
+}

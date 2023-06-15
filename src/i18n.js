@@ -1,17 +1,43 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
+
 import login_en from "./locales/en/IniciarSesion.json"
+import contacto_en from "./locales/en/Contacto.json"
+import forgotPassword_en from "./locales/en/ForgotPassword.json"
+import inicio_en from "./locales/en/Inicio.json"
+
 import login_es from "./locales/es/IniciarSesion.json"
+import contacto_es from "./locales/es/Contacto.json"
+import forgotPassword_es from "./locales/es/ForgotPassword.json"
+import opcionesNav_es from './locales/es/nav.json';
+//import opcionesNav_en from './locales/en/nav.json';
+import inicio_es from "./locales/es/Inicio.json"
+
+import opcionesNav_en from './locales/en/nav.json';
+import notificarPago_es from './locales/es/NotificarPago.json';
+import notificarPago_en from './locales/en/NotificarPago.json';
+
 
 const en = Object.assign(
     {},
-    login_en
+    login_en,
+    contacto_en,
+    forgotPassword_en,
+    inicio_en,
+    opcionesNav_en,
+    notificarPago_en,
 );
 
 const es = Object.assign(
     {},
-    login_es
+    login_es,
+    contacto_es,
+    forgotPassword_es,
+    opcionesNav_es,
+    inicio_es,
+    opcionesNav_es,
+    notificarPago_es,
 );
 
 

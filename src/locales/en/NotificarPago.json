@@ -1,0 +1,61 @@
+{
+    "notPago":{
+        "cantDeposito":"Amount of deposits",
+        "cantDepositoTexto":"1- How many deposits and/or transfers do you have to notify?",
+        "tipoOperacion":"Operation Type",
+        "tipoOperacionTexto":"2- Select the way in which the training was cancelled, or the service offered",
+        "datoTransferencia":"Transfer / deposit data",
+        "datoTransferenciaTexto":"3- Transfer/deposit data",
+        "datoUsuario":"User data",
+        "datoUsuarioTexto":"4- User data",
+        "datoEmpresaTexto":"4- Data of the company and its representative",
+        "datoAdiestramiento":"Training data",
+        "datoAdiestramientoTexto":"5- Data of the house",
+        "datoRecibo": "Receipt",
+        "datoReciboTexto": "Verify your data before continuing",
+        "notificarPago": "Notify Payment",
+        "continuar":"Continue",
+        "atras":"Back",
+        "seleccionarNumero":"Select a number",
+        "seleccionarForma":"Select a Shape",
+        "deposito":"Deposit",
+        "transferencia":"Transfer",
+
+        "monto": "Amount",
+        "bancoOrigen": "Bank of Origin",
+        "paisCuentaBancoOrigen": "Country Bank Account Origin",
+        "bancoDestino":"Destination Bank",
+        "fechaDeposito": "Deposit Date",
+        "numTransferencia": "Transfer Number",
+        "moneda": "currency",
+
+        "nombre": "Name",
+        "apellido":"Last Name",
+        "cedula": "Identification Card",
+        "paisProcedencia": "Country Origin",
+        "codigoCliente": "Customer Code",
+        "correo": "Email",
+        "telefono": "Phone",
+        "correoEmpresa": "Email Company",
+        "nombreApellido": "Name and Surname",
+        "direccion": "Direction",
+        "paisProcedenciaEmpresa": "Country of Company Origin",
+        "rif": "Rif",
+        "nombreEmpresa": "Company Name",
+
+
+        "datosRepresentante":"Data of the company representative",
+        "ciudad":"City",
+        "pais":"country",
+        "estado":"Status",
+
+        "zona":"Zone",
+        "descripcion":"Description",
+        "fechaPublicacion":"Publication Date",
+        "fechaVencimiento":"Expiration Date",
+        "idiomaPublicacion":"Publication Language",
+        "precio":"Price"
+
+        
+    }
+}
