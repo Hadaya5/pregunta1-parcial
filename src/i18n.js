@@ -14,6 +14,9 @@ import opcionesNav_es from './locales/es/nav.json';
 //import opcionesNav_en from './locales/en/nav.json';
 import inicio_es from "./locales/es/Inicio.json"
 
+import opcionesNav_en from './locales/en/nav.json';
+import notificarPago_es from './locales/es/NotificarPago.json';
+import notificarPago_en from './locales/en/NotificarPago.json';
 
 
 const en = Object.assign(
@@ -21,7 +24,9 @@ const en = Object.assign(
     login_en,
     contacto_en,
     forgotPassword_en,
-    inicio_en
+    inicio_en,
+    opcionesNav_en,
+    notificarPago_en,
 );
 
 const es = Object.assign(
@@ -30,7 +35,9 @@ const es = Object.assign(
     contacto_es,
     forgotPassword_es,
     opcionesNav_es,
-    inicio_es
+    inicio_es,
+    opcionesNav_es,
+    notificarPago_es,
 );
 
 

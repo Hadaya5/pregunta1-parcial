@@ -12,6 +12,8 @@ import "./App.css";
 import { useEffect, useState } from "react";
 import { Inicio } from "./routes/Inicio";
 import { AuthContextProvider } from "./context/AuthContext";
+import {NotificarPago} from './routes/NotificarPago';
+
 import { Contacto } from "./routes/Contacto";
 
 function App() {
@@ -62,10 +64,16 @@ function App() {
                                     path="/inicio"
                                     element={<Inicio/>}
                                 />
+
+                                <Route
+                                    exact
+                                    path="/cotizaciones"
+                                    element={<> COTIZACINES</>}
+                                />
                                 <Route
                                     exact
                                     path="/notificar-pago"
-                                    element={<> hola notificar pago</>}
+                                    element={<NotificarPago/>}
                                 />
                                 
                                 <Route

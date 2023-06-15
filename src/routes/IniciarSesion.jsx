@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react'
 import { useTranslation } from 'react-i18next';  
 import "../styles/IniciarSesion.scss"
 import { useNavigate } from 'react-router-dom';
-import users from "../users/users.json"
+import users from "../data/users.json"
 import AuthContext from '../context/AuthContext';
 
 export const IniciarSesion = () => {
