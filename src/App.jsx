@@ -13,6 +13,7 @@ import { useEffect, useState } from "react";
 import { Inicio } from "./routes/Inicio";
 import { AuthContextProvider } from "./context/AuthContext";
 import { NotificarPago } from './routes/NotificarPago';
+import { DatosContacto } from './routes/DatosContacto';
 import { Cotizaciones } from "./routes/Cotizaciones";
 import FormaPago from "./routes/FormaPago";
 
@@ -92,6 +93,11 @@ function App() {
                                 <Route
                                     exact
                                     path="/datos-contacto"
+                                    element={<DatosContacto/>}
+                                />
+                                <Route
+                                    exact
+                                    path="/contacto"
                                     element={<Contacto/>}
                                 />
                                 {/* Ruta predeterminada */}

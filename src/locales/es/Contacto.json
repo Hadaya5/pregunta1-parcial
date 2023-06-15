@@ -17,6 +17,18 @@
         "para": "Para",
         "nombre": "Nombre y apellido",
         "asunto": "Asunto",
-        "enviar": "Enviar"
+        "enviar": "Enviar",
+        "datos": "Datos de Contacto",
+        "tipo": "Tipo",
+        "valor": "Valor",
+        "accion": "Accion",
+        "eliminar": "Eliminar",
+        "modificar": "Modificar",
+        "agregar": "Agregar otros datos de Contacto",
+        "actualizar": "Actualizar",
+        "agregarr": "Agregar Registro",
+        "telefonom": "Telefono Movil",
+        "telefonof": "Telefono Fijo",
+        "email": "Email"
     }
 }
