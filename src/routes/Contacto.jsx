@@ -5,13 +5,17 @@ import "../styles/Contacto.scss"
 
 export const Contacto = () => {
 
+    const handleSubmit = (e) => {
+        console.log(e);
+    };
+
     const { t } = useTranslation();
     
     return <>
         <div id="contacto">
             <div id="header">
                 <h2>
-                    {t("contacto.vivienda")}
+                    {t("contacto.vivienda")+" "}
                     <a href="">{t("contacto.click_info_vivienda")}</a>
                 </h2> 
             </div>
@@ -81,11 +85,11 @@ export const Contacto = () => {
                     <div className="faq">
                         {t('contacto.preguntas')}
                     </div>
-                    <form action="">
+                    <form onSubmit={handleSubmit}>
                         <h3>{t("contacto.formulario")}</h3>
-                        <input placeholder={t("contacto.para")} type="text" name="" id="" />    <br/>
-                        <input placeholder={t("contacto.nombre")} type="text" name="" id="" />  <br/>
-                        <input placeholder={t("contacto.asunto")} type="text" name="" id="" />  <br/>
+                        <input required placeholder={t("contacto.para")} type="text" name="" id="" />    <br/>
+                        <input required placeholder={t("contacto.nombre")} type="text" name="" id="" />  <br/>
+                        <input required placeholder={t("contacto.asunto")} type="text" name="" id="" />  <br/>
                         <button>{t("contacto.enviar")}</button>
                     </form>
                 </div>

@@ -5,6 +5,8 @@
     // background-color: red;
 
     #header{
+        display: flex;
+        justify-content: center;
         h2{
             color: $dorado;
             a{
@@ -66,6 +68,9 @@
                     border-radius: 5px;
                     color: white;
                     font-weight: bold;
+                    &:hover{
+                        cursor: pointer;
+                    }
                 }
             }
         }
