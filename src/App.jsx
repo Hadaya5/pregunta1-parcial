@@ -81,7 +81,6 @@ function App() {
                                 <Route
                                     exact
                                     path="/datos-contacto"
-                                    // element={<>hey</>}
                                     element={<Contacto/>}
                                 />
                                 {/* Ruta predeterminada */}
