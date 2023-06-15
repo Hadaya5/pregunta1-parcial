@@ -1,0 +1,22 @@
+{
+    "contacto": {
+        "vivienda": "Vivienda",
+        "click_info_vivienda": "Haga click aquí para ver información de la vivienda",
+        "telefonos": "Teléfonos",
+        "atencion": "Atención al público",
+        "lunes_viernes": "Lunes a Viernes",
+        "sabados_domingos": "Sábados y Domingos",
+        "horario": "De 8am a 12m. Y de 1pm a 5pm",
+        "correo": "Correo electrónico",
+        "envia_correo": "Envíanos tus preguntas o comentarios a",
+        "enlaces_interes": "Enlaces de interés",
+        "preguntas": "Preguntas Frecuentes",
+        "terminos": "Términos de servicio",
+        "siguenos": "Síguenos en",
+        "formulario": "Formulario de Contacto",
+        "para": "Para",
+        "nombre": "Nombre y apellido",
+        "asunto": "asunto",
+        "enviar": "enviar"
+    }
+}

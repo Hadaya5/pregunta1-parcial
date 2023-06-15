@@ -1,12 +1,16 @@
 import React from "react"
 
+import "../styles/Contacto.scss"
+
 export const Contacto = () => {
     
     return <>
         <div id="contacto">
             <div id="header">
-                Vivienda
-                <a href="">click</a>
+                <h2>
+                    Vivienda
+                    <a href="">click</a>
+                </h2> 
             </div>
             <div className="container">
                 <div className="info">

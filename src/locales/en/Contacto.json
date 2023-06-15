@@ -1,0 +1,22 @@
+{
+    "contacto": {
+        "vivienda": "Home",
+        "click_info_vivienda": "Click here to view home information",
+        "telefonos": "Phones",
+        "atencion": "Customer Service",
+        "lunes_viernes": "Monday to Friday",
+        "sabados_domingos": "Saturdays and Sundays",
+        "horario": "From 8am to 12pm. And from 1pm to 5pm",
+        "correo": "Email",
+        "envia_correo": "Send us your questions or comments to",
+        "enlaces_interes": "Useful Links",
+        "preguntas": "Frequently Asked Questions",
+        "terminos": "Terms of Service",
+        "siguenos": "Follow us on",
+        "formulario": "Contact Form",
+        "para": "For",
+        "nombre": "Name and surname",
+        "asunto": "Subject",
+        "enviar": "Send"
+    }
+}
