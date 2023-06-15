@@ -10,6 +10,7 @@ import AuthContext from '../context/AuthContext';
 export const Inicio = () => {
     const { t, i18n } = useTranslation();
     const [isOpen, setIsOpen] = useState(false)
+    const [isOpen2, setIsOpen2] = useState(false)
     const [userType, setUserType] = useState('')
     const {authState, setAuthState} = useContext(AuthContext);
     const usuarios = users.users;
@@ -147,26 +148,26 @@ export const Inicio = () => {
     }
 
   return (
-<>
+    <>
     {   userType === 'CEO' || userType === 'Asistente'
         ? 
             <div id='containerCEO'>
-                <h2>Leyenda</h2>
+                <h2>{t("inicio.leyenda")}</h2>
                 <div id="containerBox1">
-                    <p id="box1">Mis notificaciones</p>
+                    <p id="box1">{t("inicio.misNotificaciones")}</p>
                 </div>
                 <div id="containerStatus">
                     <div>
-                        <p className='estatus'>Estatus</p>
-                        <p className='estatus proceso1'>En proceso</p>
+                        <p className='estatus'>{t("inicio.estatus")}</p>
+                        <p className='estatus proceso1'>{t("inicio.enProceso")}</p>
                     </div>
                     <div>
-                        <p className='estatus'>Estatus</p>
-                        <p className='estatus proceso2'>Procesada</p>
+                        <p className='estatus'>{t("inicio.estatus")}</p>
+                        <p className='estatus proceso2'>{t("inicio.procesada")}</p>
                     </div>
                     <div>
-                        <p className='estatus'>Estatus</p>
-                        <p className='estatus proceso3'>Rechazada</p>
+                        <p className='estatus'>{t("inicio.estatus")}</p>
+                        <p className='estatus proceso3'>{t("inicio.rechazada")}</p>
                     </div>
                 </div>
 
@@ -174,22 +175,22 @@ export const Inicio = () => {
 
                 <div id='containerTables'>
                     <div className='containerButtons'>
-                        <button id='botonProcesar' onClick={ handleNotificacionEnProceso }>Procesada</button>
-                        <button id='botonRechazar'>Rechazada</button>
+                        <button id='botonProcesar' onClick={ handleNotificacionEnProceso }>{t("inicio.procesada")}</button>
+                        <button id='botonRechazar'>{t("inicio.rechazada")}</button>
                     </div>
 
-                    <h1 id="enProceso">En proceso</h1>
-                    <p className='misNotificaciones'>Mis notificaciones</p>
+                    <h1 id="enProceso">{t("inicio.enProceso")}</h1>
+                    <p className='misNotificaciones'>{t("inicio.misNotificaciones")}</p>
                     <table>
                         <tr>
                             <th className='border-checkbox' ></th>
-                            <th>Fecha de notificación de pago</th>
-                            <th>Hora</th>
-                            <th>Banco destino</th>
-                            <th>Nro. de transferencia</th>
-                            <th>Monto</th>
-                            <th>Cliente</th>
-                            <th>Nro. de confirmación</th>
+                            <th>{t("inicio.fechaNotificacion")}</th>
+                            <th>{t("inicio.hora")}</th>
+                            <th>{t("inicio.bancoDestino")}</th>
+                            <th>{t("inicio.nroTransferencia")}</th>
+                            <th>{t("inicio.monto")}</th>
+                            <th>{t("inicio.cliente")}</th>
+                            <th>{t("inicio.nroConfirmacion")}</th>
                         </tr>
 
                         {notificacionEnProceso.map( notif => 
@@ -200,7 +201,7 @@ export const Inicio = () => {
                                 <td>{notif.banco}</td>
                                 <td>{notif.nroTransferencia}</td>
                                 <td>{notif.monto}</td>
-                                <td><a href="#">Click aquí</a></td>
+                                <td><a className='link' onClick={ () => setIsOpen2(true) }>Click aquí</a></td>
                                 <td><a href="#">{notif.nroConfirmacion}</a></td>
                             </tr>
                             )
@@ -208,18 +209,18 @@ export const Inicio = () => {
 
                     </table>
 
-                    <h1 id="procesada">Procesada</h1>
-                    <p className='misNotificaciones'>Mis notificaciones</p>
+                    <h1 id="procesada">{t("inicio.procesada")}</h1>
+                    <p className='misNotificaciones'>{t("inicio.misNotificaciones")}</p>
                     <table>
                         <tr>
                             <th className='border-checkbox' ></th>
-                            <th>Fecha de notificación de pago</th>
-                            <th>Hora</th>
-                            <th>Banco destino</th>
-                            <th>Nro. de transferencia</th>
-                            <th>Monto</th>
-                            <th>Cliente</th>
-                            <th>Nro. de confirmación</th>
+                            <th>{t("inicio.fechaNotificacion")}</th>
+                            <th>{t("inicio.hora")}</th>
+                            <th>{t("inicio.bancoDestino")}</th>
+                            <th>{t("inicio.nroTransferencia")}</th>
+                            <th>{t("inicio.monto")}</th>
+                            <th>{t("inicio.cliente")}</th>
+                            <th>{t("inicio.nroConfirmacion")}</th>
                         </tr>
                         {notificacionProcesada.map( notif => 
                             <tr>
@@ -229,7 +230,7 @@ export const Inicio = () => {
                                 <td>{notif.banco}</td>
                                 <td>{notif.nroTransferencia}</td>
                                 <td>{notif.monto}</td>
-                                <td><a href="#">Click aquí</a></td>
+                                <td><a className='link' onClick={ () => setIsOpen2(true) }>Click aquí</a></td>
                                 <td><a href="#">{notif.nroConfirmacion}</a></td>
                             </tr>
                             )
@@ -237,22 +238,22 @@ export const Inicio = () => {
                     </table>
 
                     <div className='containerButtons'>
-                        <button id='botonEnviar'>Enviar correo</button>
-                        <button onClick={ handleNotificacionRechazada } id='botonProcesar'>Procesada</button>
+                        <button id='botonEnviar'>{t("inicio.enviarCorreo")}</button>
+                        <button onClick={ handleNotificacionRechazada } id='botonProcesar'>{t("inicio.procesada")}</button>
                     </div>
 
-                    <h1 id="rechazada">Rechazada</h1>
-                    <p className='misNotificaciones'>Mis notificaciones</p>
+                    <h1 id="rechazada">{t("inicio.rechazada")}</h1>
+                    <p className='misNotificaciones'>{t("inicio.misNotificaciones")}</p>
                     <table>
                         <tr>
                             <th className='border-checkbox' ></th>
-                            <th>Fecha de notificación de pago</th>
-                            <th>Hora</th>
-                            <th>Banco destino</th>
-                            <th>Nro. de transferencia</th>
-                            <th>Monto</th>
-                            <th>Cliente</th>
-                            <th>Nro. de confirmación</th>
+                            <th>{t("inicio.fechaNotificacion")}</th>
+                            <th>{t("inicio.hora")}</th>
+                            <th>{t("inicio.bancoDestino")}</th>
+                            <th>{t("inicio.nroTransferencia")}</th>
+                            <th>{t("inicio.monto")}</th>
+                            <th>{t("inicio.cliente")}</th>
+                            <th>{t("inicio.nroConfirmacion")}</th>
                         </tr>
                         {notificacionRechazada.map( notif => 
                             <tr>
@@ -262,13 +263,122 @@ export const Inicio = () => {
                                 <td>{notif.banco}</td>
                                 <td>{notif.nroTransferencia}</td>
                                 <td>{notif.monto}</td>
-                                <td><a href="#">Click aquí</a></td>
+                                <td><a className='link' onClick={ () => setIsOpen2(true) }>Click aquí</a></td>
                                 <td><a href="#">{notif.nroConfirmacion}</a></td>
                             </tr>
                             )
                         }
                     </table>
                 </div>
+
+                <Popup id='popup-hola' open={isOpen2} onClose={() => setIsOpen2(false)} >
+                    <div id='popup-container2'>
+                        <div className="header">{t("inicio.datosCliente")}</div>
+                        <h1 style={{ marginLeft: "50px"}}>{t("inicio.codigoCliente")} <span className='red' style={{ fontSize: "1.5rem" }}>915367</span></h1>
+                        
+                        <div id="centerTable">
+                            <table id="firstTable">
+                                <tr>
+                                    <th colspan="2">{t("inicio.datosRepresentante")}</th>
+                                </tr>
+                                <tr>
+                                    <td className='bold'>{t("inicio.nombreApellido")}</td>
+                                    <td>Luisana Contreras</td>
+                                </tr>
+                                <tr>
+                                    <td className='bold'>{t("inicio.correo")}</td>
+                                    <td>lcontrerasl@goldenteamconsultores.com</td>
+                                </tr>
+                                <tr>
+                                    <td className='bold'>{t("inicio.telefono")}</td>
+                                    <td>0414-389-12-34</td>
+                                </tr>
+                            </table>
+                        </div> <br/><br/>
+
+                        <div id="popupTables">
+                            <table>
+                                <tr>
+                                    <th colspan="2">{t("inicio.datos-vivienda")}</th>
+                                </tr>
+                                <tr>
+                                    <td className='bold'>{t("inicio.País")}</td>
+                                    <td>Colombias</td>
+                                </tr>
+                                <tr>
+                                    <td className='bold'>{t("inicio.Estado")}</td>
+                                    <td>Cundinamarca</td>
+                                </tr>
+                                <tr>
+                                    <td className='bold'>{t("inicio.Ciudad")}</td>
+                                    <td>Bogotá</td>
+                                </tr>
+                                <tr>
+                                    <td className='bold'>{t("inicio.Zona")}</td>
+                                    <td>Bogotá</td>
+                                </tr>
+                                <tr>
+                                    <td className='bold'>{t("inicio.Descripción")}</td>
+                                    <td><a href="#">Click aquí</a></td>
+                                </tr>
+                                <tr>
+                                    <td className='bold'>{t("inicio.Fecha-publicación")}</td>
+                                    <td>11-7-2019</td>
+                                </tr>
+                                <tr>
+                                    <td className='bold'>{t("inicio.Fecha-vencimiento")}</td>
+                                    <td>11-10-2019</td>
+                                </tr>
+                                <tr>
+                                    <td className='bold'>{t('inicio.operacion')}</td>
+                                    <td>Venta</td>
+                                </tr>
+                                <tr>
+                                    <td className='bold'>{t('inicio.Idioma-publicación')}</td>
+                                    <td>Español</td>
+                                </tr>
+                                <tr>
+                                    <td className='bold'>{t('inicio.precio')}</td>
+                                    <td>30 USD</td>
+                                </tr>
+                            </table>
+
+                            <table>
+                                <tr>
+                                    <th colspan="2">{t('inicio.datosTransferencia')}</th>
+                                </tr>
+                                <tr>
+                                    <td className='bold'>{t('inicio.monto')}</td>
+                                    <td>30 USD</td>
+                                </tr>
+                                <tr>
+                                    <td className='bold'>{t('inicio.bancoOrigen')}</td>
+                                    <td>Credit Suisse</td>
+                                </tr>
+                                <tr>
+                                    <td className='bold'>{t('inicio.paisBancoOrigen')}</td>
+                                    <td>Suiza</td>
+                                </tr>
+                                <tr>
+                                    <td className='bold'>{t('inicio.paisBancoDestino')}</td>
+                                    <td>Banesco-Panamá</td>
+                                </tr>
+                                <tr>
+                                    <td className='bold'>{t('inicio.fechaDeposito')}</td>
+                                    <td>02-04-2019</td>
+                                </tr>
+                                <tr>
+                                    <td className='bold'>{t('inicio.nroTransferencia')}</td>
+                                    <td>00002132435678</td>
+                                </tr>
+                            </table>
+                        </div>
+
+                            <div id="centerButton">
+                                <button id="boton-aceptar">{t("inicio.boton-aceptar")}</button>
+                            </div>
+                    </div>
+                </Popup>
 
             </div>
 
@@ -309,7 +419,7 @@ export const Inicio = () => {
                             <p className='simulacion'>California</p>
                             <p className='simulacion'>Menlo Park</p>
                             <p className='simulacion'>Golden Garden</p>
-                            <a id='link' onClick={ () => setIsOpen(true) }>Click aquí</a>
+                            <a className='link' onClick={ () => setIsOpen(true) }>Click aquí</a>
                             <p className='simulacion'>Jueves 11/07/2019</p>
                             <p className='simulacion'>Viernes 11/07/2019</p>
                             <p className='simulacion'>Estados Unidos</p>

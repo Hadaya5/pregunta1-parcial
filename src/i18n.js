@@ -13,10 +13,12 @@ import forgotPassword_es from "./locales/es/ForgotPassword.json"
 import opcionesNav_es from './locales/es/nav.json';
 //import opcionesNav_en from './locales/en/nav.json';
 import inicio_es from "./locales/es/Inicio.json"
+import cotizaciones_es from "./locales/es/Cotizaciones.json"
+import notificarPago_es from './locales/es/NotificarPago.json';
 
 import opcionesNav_en from './locales/en/nav.json';
-import notificarPago_es from './locales/es/NotificarPago.json';
 import notificarPago_en from './locales/en/NotificarPago.json';
+import cotizaciones_en from "./locales/en/Cotizaciones.json"
 
 
 const en = Object.assign(
@@ -27,6 +29,7 @@ const en = Object.assign(
     inicio_en,
     opcionesNav_en,
     notificarPago_en,
+    cotizaciones_en,
 );
 
 const es = Object.assign(
@@ -38,6 +41,7 @@ const es = Object.assign(
     inicio_es,
     opcionesNav_es,
     notificarPago_es,
+    cotizaciones_es,
 );
 
 

@@ -1,0 +1,16 @@
+{
+    "cotizacion": {
+    "pendientes": "Pending to receive response",
+    "misNotificaciones": "My notifications",
+    "botonProcesada": "Processed",
+    "botonRechazada": "Rejected",
+    "codigoCotizacion": "Quotation code",
+    "codigoCliente": "Client code",
+    "cliente-empresa": "Client/Company",
+    "fechaGenero": "Date the quotation was generated",
+    "fechaVencimiento": "Expiration date",
+    "monto": "Amount",
+    "opciones": "Options",
+    "porDefinir": "To define"
+    }
+}

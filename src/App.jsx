@@ -12,7 +12,8 @@ import "./App.css";
 import { useEffect, useState } from "react";
 import { Inicio } from "./routes/Inicio";
 import { AuthContextProvider } from "./context/AuthContext";
-import {NotificarPago} from './routes/NotificarPago';
+import { NotificarPago } from './routes/NotificarPago';
+import { Cotizaciones } from "./routes/Cotizaciones";
 
 import { Contacto } from "./routes/Contacto";
 
@@ -68,7 +69,7 @@ function App() {
                                 <Route
                                     exact
                                     path="/cotizaciones"
-                                    element={<> COTIZACINES</>}
+                                    element={<Cotizaciones/>}
                                 />
                                 <Route
                                     exact
