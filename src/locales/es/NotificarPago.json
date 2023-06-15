@@ -48,7 +48,7 @@
         "nombreEmpresa": "Nombre Empresa",
         "datosRepresentante":"Datos del representante de la empresa",
         "ciudad":"Ciudad",
-        "pais":"Paid",
+        "pais":"Pais",
         "estado":"Estado",
 
         "zona":"Zona",
@@ -74,6 +74,7 @@
         "numeroTransferencia": "Numero de transferencia",
         "cuentabanco": "Banesco Panamá - Nro de cuenta: 201800948693 – Código SWIFT: BANSPAPA",
         "seleccionarBanco":"Seleccione el Banco Destino"
+    
     
     }
 

@@ -671,7 +671,7 @@ export const Fase04 = ({ onSubmit, botonEnviarRef, user }) => {
                         <section className="containerRowForm">
                             <label> {t("notPago.nombreApellido")}</label>
                             <input
-                                type="date"
+                                type="text"
                                 name="nombreApellido"
                                 value={formulario.nombreApellido}
                                 onChange={manejarChange}
@@ -679,7 +679,7 @@ export const Fase04 = ({ onSubmit, botonEnviarRef, user }) => {
                             />
                         </section>
                         <section className="containerRowForm">
-                            <label> {t("notPago.correoEmpresa")} </label>
+                            <label> {t("notPago.correo")} </label>
                             <input
                                 type="text"
                                 name="correoEmpresa"
@@ -1386,21 +1386,21 @@ export const Fase06 = ({ fase03, fase04, fase05, user }) => {
                                     {t("notPago.nombreApellido")}
                                 </div>
                                 <div className="value-country">
-                                    {fase05.nombreApellido}
+                                    {fase04.nombreApellido}
                                 </div>
 
                                 <div className="label-state">
                                     {t("notPago.correo")}
                                 </div>
                                 <div className="value-state">
-                                    {fase05.correo}
+                                    {fase04.correoEmpresa}
                                 </div>
 
                                 <div className="label-city">
                                     {t("notPago.telefono")}
                                 </div>
                                 <div className="value-city">
-                                    {fase05.telefono}
+                                    {fase04.telefono}
                                 </div>
                             </div>
 
