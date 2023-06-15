@@ -2,11 +2,15 @@ import React, { useState } from 'react';
 import { ReactComponent as LogoM } from '../assets/envelope.svg';
 import { ReactComponent as LogoMovil } from '../assets/phone.svg';
 import { ReactComponent as LogoFijo } from '../assets/telephone-fill.svg';
-import '../styles/Inicio.scss'
+import '../styles/DatosContacto.scss'
 import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
 import { useTranslation } from 'react-i18next'; 
-const DatosContacto = () => {
+import logo from '../assets/logo.png';
+
+
+
+export const DatosContacto = () => {
   const [selectedOption, setSelectedOption] = useState('');
   const [validador, setValidador] = useState(false);
   const [activado, setActivado] = useState(true);
@@ -20,6 +24,7 @@ const DatosContacto = () => {
   const [iconom, setIconMo] = useState(false);
 
 
+  const { t } = useTranslation();
 
   function darFormatoNumero(numero) {
     return numero.replace(/(\d{4})(\d{3})(\d{2})(\d{2})/, "$1-$2-$3-$4");
@@ -111,31 +116,46 @@ const DatosContacto = () => {
   }
 
   return (
-
-
-    <div>
-<table>
-      <thead>
-        <tr>
-          <th>Tipo</th>
-          <th>Valor</th>
-          <th>Accion</th>
-        </tr>
-      </thead>
+    <section className='containerHPrincipalNP'>
+      <section className='containerHeaderNP'>
+        <img
+            src={logo}
+            style={{width:'4em'}}
+        />
+        <p>Vivienda xx</p>
+        <div id="header">
+                <h2>
+                    <a href="">{t("contacto.click_info_vivienda")}</a>
+                </h2> 
+            </div>
+        
+        </section>
+        
+     <div id='containerCEO'>  
+    <div id='containerTables'>
+    <h1>Datos de Contacto</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>Tipo</th>
+            <th>Valor</th>
+            <th>Accion</th>
+          </tr>
+        </thead>
       <tbody>
           {datos.map((fila, index) => (
             <tr key={index}>
               <td>{fila.columna1}</td>
               <td>{fila.columna2}</td>
               <td>
-                <button onClick={() => handleModificar(index)}>Modificar</button>
-                <button onClick={() => handleEliminar(index)}>Eliminar</button>
+                <button className='botonEliminar'  onClick={() => handleEliminar(index)}>Eliminar</button>
+                <button className='botonModificar' onClick={() => handleModificar(index)}>Modificar</button>
               </td>
             </tr>
           ))}
         </tbody>
     </table>
-
+            <h1>Agregar otros datos de Contacto</h1>
       <select value={selectedOption} onChange={handleOptionChange} id='select'>
         <option value="">Agregar Registro</option>
         <option value="Telefono Movil..">Telefono Movil</option>
@@ -143,22 +163,26 @@ const DatosContacto = () => {
         <option value="Email">Email</option>
       </select>
       
-      {icono && <LogoM/>}
-      {iconof && <LogoFijo/>} 
-      {iconom && <LogoMovil/>}  
+
+
+      <div className="input-container">
+      {icono && <LogoM className="input-icon" />}
+      {iconof && <LogoFijo className="input-icon"/>} 
+      {iconom && <LogoMovil className="input-icon"/>}  
         
 
 
-      <input
+      <input  className="input-field"
           type="text"
           value={nuevoDato}
           onChange={(e) => {setNuevoDato(e.target.value); validarFormato(); setValidador(true);}}
           onClick={(e) =>  {setNuevoDato('')}}
         />
-
-      <button onClick={() => agregarFila()} disabled= {activado} >Actualizar</button> 
-    </div>
+        </div>
+        <button className='botonActualizar' onClick={() => agregarFila()} disabled= {activado} >Actualizar</button> 
+      </div>
+      </div>
+    </section>
   );
 };
 
-export default DatosContacto;
