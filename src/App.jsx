@@ -12,6 +12,8 @@ import "./App.css";
 import { useEffect, useState } from "react";
 import { Inicio } from "./routes/Inicio";
 import { AuthContextProvider } from "./context/AuthContext";
+import {NotificarPago} from './routes/NotificarPago';
+
 
 function App() {
     const [autorizacion, setAutorizacion] = useState(null);
@@ -64,7 +66,7 @@ function App() {
                                 <Route
                                     exact
                                     path="/notificar-pago"
-                                    element={<> hola notificar pago</>}
+                                    element={<NotificarPago/>}
                                 />
                                 
                                 <Route
